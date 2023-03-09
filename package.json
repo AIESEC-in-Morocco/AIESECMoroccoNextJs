@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "comp": "hygen component new",
+    "page": "hygen page new"
   },
   "dependencies": {
     "@types/node": "18.14.6",
