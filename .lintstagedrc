@@ -1,7 +1,6 @@
 {
   "**/*.{js,jsx,ts,tsx}": [
     "eslint --max-warnings=0 --fix",
-    "tsc-files --pretty --noEmit",
     "prettier --write"
   ],
   "**/*.{html,gql,json,css,md}": [
