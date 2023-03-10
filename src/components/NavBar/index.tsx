@@ -1,10 +1,15 @@
+import { lato } from "@/pages/_app";
+import { useDisclosure } from "@chakra-ui/react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import AIESEC_BLUE from "../assets/logos/AIESEC_BLUE";
+import { NavBarDrawer } from "../NavBarDrawer";
+import routing from "./routing";
 
 export const NavBar = ({}: NavBarProps) => {
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -21,57 +26,34 @@ export const NavBar = ({}: NavBarProps) => {
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Site Nav" className="hidden md:block">
                 <ul className="flex items-center gap-6 text-sm">
-                  <li>
-                    <Link
-                      className={clsx(
-                        "text-gray-500 transition hover:text-primary",
-                        router.pathname == "/" && "text-primary"
-                      )}
-                      href="/"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={clsx(
-                        "text-gray-500 transition hover:text-primary",
-                        router.pathname == "/events" && "text-primary"
-                      )}
-                      href="/events"
-                    >
-                      Events
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={clsx(
-                        "text-gray-500 transition hover:text-primary",
-                        router.pathname == "/contact-us" && "text-primary"
-                      )}
-                      href="/contact-us"
-                    >
-                      Contacts-us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={clsx(
-                        "text-gray-500 transition hover:text-primary",
-                        router.pathname == "/morocco" && "text-primary"
-                      )}
-                      href="/morocco"
-                    >
-                      Morocco
-                    </Link>
-                  </li>{" "}
+                  {routing.map((route) => {
+                    if (route.isButton) return <></>;
+                    return (
+                      <li key={route.name}>
+                        <Link
+                          className={clsx(
+                            "text-gray-500 transition hover:text-primary text-base",
+                            lato.variable,
+                            "font-sans",
+                            router.pathname == route.path && "text-primary",
+                            route.isButton &&
+                              "bg-primary text-white px-5 py-3 rounded-lg hover:text-white hover:bg-blue-800"
+                          )}
+                          href={route.path}
+                        >
+                          {route.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
 
               <div className="flex items-center gap-4">
                 <div className="block md:hidden">
                   <button
-                    title="thla"
+                    onClick={onOpen}
+                    title="Navbar"
                     className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
                   >
                     <svg
@@ -94,6 +76,7 @@ export const NavBar = ({}: NavBarProps) => {
             </div>
           </div>
         </div>
+        <NavBarDrawer isOpen={isOpen} onClose={onClose} router={router} />
       </header>
     </>
   );

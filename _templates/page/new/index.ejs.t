@@ -1,6 +1,6 @@
 ---
 to: src/pages/<%=Name%>.tsx
-sh: yarn eslint --fix src/pages/<%=Name%>.tsx
+sh: yarn eslint --fix src/pages/<%=Name%>/index.tsx
 ---
 import type { NextPage } from "next";
 import Head from "next/head";

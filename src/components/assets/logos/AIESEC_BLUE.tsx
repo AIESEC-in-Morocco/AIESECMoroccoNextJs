@@ -6,7 +6,7 @@ const AIESEC_BLUE = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1188.26 169"
     width="12em"
-    height="5em"
+    height="2em"
     {...props}
   >
     <defs>
