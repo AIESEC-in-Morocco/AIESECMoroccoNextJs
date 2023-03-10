@@ -10,7 +10,6 @@ import routing from "./routing";
 export const NavBar = ({}: NavBarProps) => {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <header aria-label="Site Header" className="bg-white">
@@ -27,7 +26,6 @@ export const NavBar = ({}: NavBarProps) => {
               <nav aria-label="Site Nav" className="hidden md:block">
                 <ul className="flex items-center gap-6 text-sm">
                   {routing.map((route) => {
-                    if (route.isButton) return <></>;
                     return (
                       <li key={route.name}>
                         <Link

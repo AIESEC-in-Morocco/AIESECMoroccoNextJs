@@ -18,6 +18,7 @@ export const NavBarDrawer = ({
   onClose,
   router,
 }: NavBarDrawerProps) => {
+  const buttons = routing.filter((route) => route.isButton);
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"full"}>
       <DrawerOverlay />
@@ -27,6 +28,7 @@ export const NavBarDrawer = ({
 
         <DrawerBody className="h-full w-full flex flex-col justify-center items-center">
           {routing.map((route) => {
+            if (route.isButton) return null;
             return (
               <div key={route.path} className="p-4">
                 <Link
@@ -45,9 +47,18 @@ export const NavBarDrawer = ({
           })}
         </DrawerBody>
         <DrawerFooter w="100%">
-          <button className="font-body font-bold px-5 py-3 w-full text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  rounded-lg text-sm  text-center  dark:bg-blue-600 dark:hover:bg-primary dark:focus:ring-blue-800">
-            <Link href="/signup">SIGNUP</Link>
-          </button>
+          <>
+            {buttons.map((route) => {
+              return (
+                <button
+                  key={route.name}
+                  className="font-body font-bold px-5 py-3 w-full text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  rounded-lg text-sm  text-center  dark:bg-blue-600 dark:hover:bg-primary dark:focus:ring-blue-800"
+                >
+                  <Link href={route.path}>{route.name}</Link>
+                </button>
+              );
+            })}
+          </>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
