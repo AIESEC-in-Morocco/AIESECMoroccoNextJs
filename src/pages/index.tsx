@@ -1,10 +1,19 @@
 import { Container, NavBar } from "@/components";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
+import Head from "next/head";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Develop your leadership with AIESEC</title>
+        <meta
+          property="og:title"
+          content="Develop your leadership with AIESEC"
+          key="title"
+        />
+      </Head>
       <NavBar />
       <Container>
         <div className="flex w-full h-[90vh] items-center justify-center flex-col-reverse md:flex-row">
