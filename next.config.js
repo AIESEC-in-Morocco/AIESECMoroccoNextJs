@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "**.google.com",
       },
+      {
+        protocol: "https",
+        hostname: "**.unsplash.com",
+      },
     ],
   },
   webpack(config) {
