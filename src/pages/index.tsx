@@ -78,6 +78,7 @@ export default function Home() {
             </button>
           </div>
         </div>
+        <div className="my-96"></div>
 
         {/* <Image
           alt="AIESEC in the Morocco"
