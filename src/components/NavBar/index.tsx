@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import AIESEC_BLUE from "../assets/logos/AIESEC_BLUE";
 import { NavBarDrawer } from "../NavBarDrawer";
-import routing from "../../pages/routing";
+import routing from "../../utils/routing";
 
 export const NavBar = ({}: NavBarProps) => {
   const router = useRouter();

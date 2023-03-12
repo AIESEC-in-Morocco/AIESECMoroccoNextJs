@@ -11,7 +11,7 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 import { NextRouter } from "next/router";
-import routing from "../../pages/routing";
+import routing from "../../utils/routing";
 
 export const NavBarDrawer = ({
   isOpen,
