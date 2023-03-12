@@ -16,16 +16,17 @@ export default function Home() {
       </Head>
       <NavBar />
       <Container>
-        <div className="flex w-full h-[90vh] items-center justify-center flex-col-reverse md:flex-row">
+        <div className="flex w-full h-[90vh] items-center justify-center flex-col-reverse md:flex-row text-gray-700 font-sans">
           <div className=" w-full grow-[2]  mt-4 md:mt-0 md:pr-8">
-            <h1 className="md:text-5xl text-3xl text-black font-semibold">
-              Leadership is for every young person
+            <h1 className="md:text-5xl text-3xl  font-semibold">
+              <span className="text-primary">Leadership</span> is for every
+              young person
             </h1>
-            <p className="text-base mt-2 md:mt-4">
+            <p className="text-base mt-2 md:mt-4 font-medium">
               Take part in one of our programs abroad, in your city, or
               virtually. Start your leadership journey with AIESEC.
             </p>
-            <button className="px-5 py-3 md:w-1/5 w-1/4 mt-4 text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  rounded-lg text-sm  text-center  dark:bg-blue-600 dark:hover:bg-primary dark:focus:ring-blue-800">
+            <button className="font-semibold px-5 py-3 md:w-1/5 w-1/4 mt-4 text-white bg-primary hover:bg-blue-500   rounded-lg text-sm text-center">
               Sign up!
             </button>
           </div>

@@ -7,7 +7,7 @@ module.exports = {
         sans: ["var(--font-lato)", "sans-serif"],
       },
       colors: {
-        primary: "#037Ef3",
+        primary: "#037EF3",
       },
     },
   },

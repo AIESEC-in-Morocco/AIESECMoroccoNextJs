@@ -19,7 +19,7 @@ const routing = [
     path: "/morocco",
     isButton: false,
   },
-  { name: "SIGNUP", path: "/signup", isButton: true },
+  { name: "Sign up!", path: "/signup", isButton: true },
 ];
 
 export default routing;
