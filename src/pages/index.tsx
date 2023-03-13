@@ -47,7 +47,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className=" flex flex-col md:flex-row mt-6 md:mt-12 items-center justify-center">
+        <div className=" flex flex-col md:flex-row mt-6  items-center justify-center  h-[60vh]">
           <div className="bg-slate-700 w-full">
             <Image
               width={870}
@@ -77,6 +77,15 @@ export default function Home() {
               About us
             </button>
           </div>
+        </div>
+        <div className="w-full flex flex-col h-[60vh] justify-center items-start">
+          <h1 className="text-gray-700 text-5xl font-semibold">
+            Our Programms
+          </h1>
+          <p className="text-lg mt-2 md:mt-4 font-medium text-gray-700">
+            We aim to develop leadership qualities and capabilities in young
+            people with these programs
+          </p>
         </div>
 
         {/* <Image
