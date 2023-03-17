@@ -6,7 +6,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Head from "next/head";
 import Image from "next/image";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
-import { Swipers } from "@/components/Swiper";
+import { Slider } from "@/components/AwsSlider";
 
 // import { Swiper } from "@/components/Swiper";
 
@@ -121,8 +121,8 @@ const AboutUs: NextPage = () => {
           </div>
         </div>
       </div>
-      <Swipers></Swipers>
-      <div className="relative bg-white py-20">
+      {/* <Swipers></Swipers> */}
+      {/* <div className="relative bg-white py-20">
         <div className="relative mx-32">
           <AiOutlineLeft
             onClick={handlePrevSlide}
@@ -173,7 +173,8 @@ const AboutUs: NextPage = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
+      <Slider></Slider>
     </>
   );
 };
