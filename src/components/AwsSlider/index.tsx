@@ -1,10 +1,10 @@
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import Image from "next/image";
 import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-// import AwesomeSliderStyles from "react-awesome-slider/src/styles";
+import AwesomeSliderStyles from "react-awesome-slider/src/styles";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import withCaption from "react-awesome-slider/dist/captioned";
+import "react-awesome-slider/dist/styles.css";
 import "react-awesome-slider/dist/captioned.css";
 
 const images = [
@@ -76,7 +76,7 @@ export const Slider = () => {
       play={true}
       cancelOnInteraction={true}
       interval={10000}
-      // cssModule={AwesomeSliderStyles}
+      cssModule={AwesomeSliderStyles}
       animation="cubeAnimation"
     >
       {images.map((image) => (
