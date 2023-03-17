@@ -2,9 +2,10 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import Image from "next/image";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import AwesomeSliderStyles from "react-awesome-slider/src/styles";
-import AutoplaySlider from "react-awesome-slider/hoc/autoplay";
-// import AutoplaySlider from 'react-awesome-slider/hoc/autoplay';
+// import AwesomeSliderStyles from "react-awesome-slider/src/styles";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import withCaption from "react-awesome-slider/dist/captioned";
+import "react-awesome-slider/dist/captioned.css";
 
 const images = [
   {
@@ -65,15 +66,17 @@ const images = [
   },
 ];
 
-const AutoplaySliderComponent = AutoplaySlider(AwesomeSlider);
+const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
+
+const CaptionedSlider = withCaption(AutoplaySliderComponent);
 
 export const Slider = () => {
   return (
-    <AutoplaySliderComponent
+    <CaptionedSlider
       play={true}
-      cancelOnInteraction={false}
-      interval={3000}
-      cssModule={AwesomeSliderStyles}
+      cancelOnInteraction={true}
+      interval={10000}
+      // cssModule={AwesomeSliderStyles}
       animation="cubeAnimation"
     >
       {images.map((image) => (
@@ -81,6 +84,6 @@ export const Slider = () => {
           <Image src={image.src} alt={image.alt} layout="fill" />
         </div>
       ))}
-    </AutoplaySliderComponent>
+    </CaptionedSlider>
   );
 };
