@@ -33,6 +33,7 @@
     "react-easy-swipe": "^0.0.23",
     "react-hook-form": "^7.43.5",
     "react-icons": "^4.8.0",
+    "react-image-gallery": "^1.2.11",
     "react-responsive-carousel": "^3.2.23",
     "sass": "^1.59.3",
     "swiper": "^9.1.0",

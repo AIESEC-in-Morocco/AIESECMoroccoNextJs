@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const withTM = require("next-transpile-modules")(["react-awesome-slider"]);
-
-module.exports = withTM({
+nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -25,6 +23,6 @@ module.exports = withTM({
 
     return config;
   },
-});
+};
 
-// module.exports = nextConfig;
+module.exports = nextConfig;
