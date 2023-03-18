@@ -3,9 +3,10 @@ import Image from "next/image";
 import AwesomeSlider from "react-awesome-slider";
 // import AwesomeSliderStyles from "react-awesome-slider/src/styles";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
-// import CaptionedHoc from "react-awesome-slider/src/hoc/captioned-images/hoc";
 import "react-awesome-slider/dist/styles.css";
-import "react-awesome-slider/dist/captioned.css";
+import React from "react";
+import ReactTypingEffect from "react-typing-effect";
+// import "react-awesome-slider/dist/captioned.css";
 
 const images = [
   {
@@ -72,18 +73,26 @@ const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
 
 export const Slider = () => {
   return (
-    <AutoplaySliderComponent
-      play={true}
-      cancelOnInteraction={false}
-      interval={10000}
-      // cssModule={AwesomeSliderStyles}
-      animation="cubeAnimation"
-    >
-      {images.map((image) => (
-        <div key={image.id}>
-          <Image src={image.src} alt={image.alt} layout="fill" />
-        </div>
-      ))}
-    </AutoplaySliderComponent>
+    <div className="relative p-32 bg-white">
+      <ReactTypingEffect
+        eraseDelay={1000}
+        cursor="#"
+        text={["Hello.", "World!"]}
+      />
+      <AutoplaySliderComponent
+        play={true}
+        cancelOnInteraction={false}
+        interval={10000}
+        // cssModule={AwesomeSliderStyles}
+        animation="cubeAnimation"
+        style={{ width: "100%", height: "30rem" }}
+      >
+        {images.map((image) => (
+          <div key={image.id}>
+            <Image src={image.src} alt={image.alt} layout="fill" />
+          </div>
+        ))}
+      </AutoplaySliderComponent>
+    </div>
   );
 };
