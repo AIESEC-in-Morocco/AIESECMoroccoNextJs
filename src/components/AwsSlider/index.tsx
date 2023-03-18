@@ -2,10 +2,10 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import Image from "next/image";
 import AwesomeSlider from "react-awesome-slider";
 // import AwesomeSliderStyles from "react-awesome-slider/src/styles";
-import withAutoplay from "react-awesome-slider/dist/autoplay";
+// import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
 import React from "react";
-import ReactTypingEffect from "react-typing-effect";
+// import ReactTypingEffect from "react-typing-effect";
 // import "react-awesome-slider/dist/captioned.css";
 
 const images = [
@@ -67,14 +67,14 @@ const images = [
   },
 ];
 
-const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
+// const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
 
 // const CaptionedSlider = CaptionedHoc(AutoplaySliderComponent);
 
 export const Slider = () => {
   return (
     <div className="relative p-32 bg-white">
-      <ReactTypingEffect
+      {/* <ReactTypingEffect
         eraseDelay={1000}
         cursor="#"
         text={["Hello.", "World!"]}
@@ -92,7 +92,7 @@ export const Slider = () => {
             <Image src={image.src} alt={image.alt} layout="fill" />
           </div>
         ))}
-      </AutoplaySliderComponent>
+      </AutoplaySliderComponent> */}
     </div>
   );
 };
