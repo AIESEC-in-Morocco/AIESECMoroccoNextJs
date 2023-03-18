@@ -89,7 +89,8 @@ const AboutUs: NextPage = () => {
       </Head>
 
       <div className="w-full h-screen">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={getImageFromGoogleDrive(
             "https://drive.google.com/file/d/1ev9R4IvCF0ZPeiXNWllPCVgmLLuGp1zo/view?usp=share_link"
           )}
@@ -97,7 +98,6 @@ const AboutUs: NextPage = () => {
           width={1920}
           height={1080}
           className="object-cover object-center w-full h-full"
-          quality={100}
           style={{ position: "fixed" }}
         />
         <NavBar />
