@@ -81,7 +81,8 @@ export const Slider = () => {
     >
       {images.map((image) => (
         <div key={image.id}>
-          <Image src={image.src} alt={image.alt} layout="fill" />
+          {/*  eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image.src} alt={image.alt} />
         </div>
       ))}
     </AutoplaySliderComponent>

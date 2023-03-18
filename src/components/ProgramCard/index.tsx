@@ -1,19 +1,21 @@
 import { PRODUCTS_COLOR } from "@/utils/products_color";
-import { Card, CardBody, CardFooter, Divider } from "@chakra-ui/react";
+import { Card, CardFooter, Divider } from "@chakra-ui/react";
 import { Fade } from "@mui/material";
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export const ProgramCard = ({ program }: ProgramCardProps) => {
   const [hover, setHover] = useState(false);
-  console.log("hover: ", hover);
+  const router = useRouter();
   return (
     <Card
       width={"full"}
       borderRadius="md"
-      className="md:mr-4"
+      className="md:mr-4 cursor-pointer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => router.push(`/program/${program}`)}
     >
       <Fade in={hover} mountOnEnter unmountOnExit>
         <div

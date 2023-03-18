@@ -88,7 +88,8 @@ export const Swipers = () => {
           {images.map((image) => {
             return (
               <SwiperSlide key={image.id}>
-                <Image
+                {/*  eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={image.src}
                   alt={image.alt}
                   width={1920}
