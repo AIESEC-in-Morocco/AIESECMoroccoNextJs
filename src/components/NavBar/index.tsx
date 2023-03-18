@@ -3,7 +3,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import AIESEC_BLUE from "../assets/logos/AIESEC_BLUE";
+import AIESEC_BLUE from "@/assets/logos/AIESEC_BLUE";
 import { NavBarDrawer } from "../NavBarDrawer";
 import routing from "../../utils/routing";
 
@@ -12,10 +12,7 @@ export const NavBar = ({}: NavBarProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <header
-        aria-label="Site Header"
-        className="bg-white relative sticky top-0"
-      >
+      <header aria-label="Site Header" className="bg-white  sticky top-0">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">

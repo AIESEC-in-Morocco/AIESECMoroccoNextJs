@@ -4,6 +4,9 @@ import { Fade } from "@mui/material";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import GV from "@/assets/logos/GV.svg";
+import GTa from "@/assets/logos/GTa.svg";
+import GTe from "@/assets/logos/GTe.svg";
 
 export const ProgramCard = ({ program }: ProgramCardProps) => {
   const [hover, setHover] = useState(false);
@@ -32,7 +35,16 @@ export const ProgramCard = ({ program }: ProgramCardProps) => {
             unmountOnExit
             style={{ transitionDelay: "200ms" }}
           >
-            <Divider className="delay-200" w={"75%"} />
+            <div className="w-[70%] flex flex-col justify-center items-center">
+              {program == "GV" ? (
+                <GV className="w-1/2" />
+              ) : program == "GTa" ? (
+                <GTa className="w-1/2" />
+              ) : (
+                <GTe className="w-1/2" />
+              )}
+              <Divider className="delay-200 mt-4" />
+            </div>
           </Fade>
         </div>
       </Fade>

@@ -24,12 +24,12 @@ nextConfig = {
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
+        resourceQuery: /url/,
       },
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
-        resourceQuery: { not: /url/ }, // exclude if *.svg?url
+        resourceQuery: { not: /url/ },
         use: ["@svgr/webpack"],
       }
     );
