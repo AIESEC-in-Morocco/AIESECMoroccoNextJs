@@ -2,10 +2,10 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import Image from "next/image";
 import AwesomeSlider from "react-awesome-slider";
 // import AwesomeSliderStyles from "react-awesome-slider/src/styles";
-// import withAutoplay from "react-awesome-slider/dist/autoplay";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
 import React from "react";
-// import ReactTypingEffect from "react-typing-effect";
+import ReactTypingEffect from "react-typing-effect";
 // import "react-awesome-slider/dist/captioned.css";
 
 const images = [
@@ -67,32 +67,42 @@ const images = [
   },
 ];
 
-// const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
+const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
 
 // const CaptionedSlider = CaptionedHoc(AutoplaySliderComponent);
 
 export const Slider = () => {
   return (
-    <div className="relative p-32 bg-white">
-      {/* <ReactTypingEffect
-        eraseDelay={1000}
-        cursor="#"
-        text={["Hello.", "World!"]}
-      />
-      <AutoplaySliderComponent
-        play={true}
-        cancelOnInteraction={false}
-        interval={10000}
-        // cssModule={AwesomeSliderStyles}
-        animation="cubeAnimation"
-        style={{ width: "100%", height: "30rem" }}
-      >
-        {images.map((image) => (
-          <div key={image.id}>
-            <Image src={image.src} alt={image.alt} layout="fill" />
-          </div>
-        ))}
-      </AutoplaySliderComponent> */}
+    <div className="relative p-32 pt-10 bg-white">
+      <div className="shadow-2xl p-24 pt-5 rounded-lg">
+        <p className="text-6xl pb-3 font-semibold">
+          {" "}
+          <span className="text-fuchsia-800">AIESEC in</span> 12 cities
+        </p>
+        <AutoplaySliderComponent
+          play={true}
+          cancelOnInteraction={false}
+          interval={10000}
+          // cssModule={AwesomeSliderStyles}
+          animation="cubeAnimation"
+          style={{ width: "100%", height: "30rem" }}
+        >
+          {images.map((image) => (
+            <div key={image.id}>
+              <Image src={image.src} alt={image.alt} layout="fill" />
+              <h1 className="relative text-white text-2xl text-center bg-black bg-opacity-50 py-2 px-2 rounded mt-96 font-bold">
+                {/* <ReactTypingEffect
+                  // eraseDelay={10000}
+                  typingDelay={0}
+                  cursor="|"
+                  text={image.alt}
+                /> */}
+                {image.alt}
+              </h1>
+            </div>
+          ))}
+        </AutoplaySliderComponent>
+      </div>
     </div>
   );
 };
