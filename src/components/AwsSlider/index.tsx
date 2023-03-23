@@ -6,7 +6,6 @@ import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
 import React from "react";
 import ReactTypingEffect from "react-typing-effect";
-// import "react-awesome-slider/dist/captioned.css";
 
 const images = [
   {
