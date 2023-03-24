@@ -18,14 +18,15 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
       className="md:mr-4 cursor-pointer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={() => router.push(`/program/${program}`)}
+      // onClick={() => router.push(`/program/${program}`)}
     >
       <Fade in={hover} mountOnEnter unmountOnExit>
         <div
           className={clsx(
             "absolute md:h-56 h-40 w-full rounded-t-md bg-gradient-to-t flex flex-col justify-end items-center",
-            program == "GV" && `from-gv`,
+            program == "GV" && `from-1986`,
             program == "GTa" && `from-gta`,
+            program == "GTe" && `from-gte`,
             program == "GTe" && `from-gte`
           )}
         >
