@@ -7,6 +7,7 @@ import { useState } from "react";
 import GV from "@/assets/logos/GV.svg";
 import GTa from "@/assets/logos/GTa.svg";
 import GTe from "@/assets/logos/GTe.svg";
+import MXP from "@/assets/logos/MXP.svg";
 
 export const ProgramCard = ({ program }: ProgramCardProps) => {
   const [hover, setHover] = useState(false);
@@ -15,7 +16,7 @@ export const ProgramCard = ({ program }: ProgramCardProps) => {
     <Card
       width={"full"}
       borderRadius="md"
-      className="md:mr-4 cursor-pointer"
+      className="md:mr-4 cursor-pointer md:h-56 mb-6 md:mb-0"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => router.push(`/program/${program}`)}
@@ -26,7 +27,8 @@ export const ProgramCard = ({ program }: ProgramCardProps) => {
             "absolute md:h-56 h-40 w-full rounded-t-md bg-gradient-to-t flex flex-col justify-end items-center",
             program == "GV" && `from-gv`,
             program == "GTa" && `from-gta`,
-            program == "GTe" && `from-gte`
+            program == "GTe" && `from-gte`,
+            program == "MXP" && `from-primary`
           )}
         >
           <Fade
@@ -40,6 +42,8 @@ export const ProgramCard = ({ program }: ProgramCardProps) => {
                 <GV className="w-1/2" />
               ) : program == "GTa" ? (
                 <GTa className="w-1/2" />
+              ) : program == "MXP" ? (
+                <MXP className="w-1/2" />
               ) : (
                 <GTe className="w-1/2" />
               )}
@@ -70,5 +74,5 @@ export const ProgramCard = ({ program }: ProgramCardProps) => {
 };
 
 export interface ProgramCardProps {
-  program: "GV" | "GTa" | "GTe";
+  program: "GV" | "GTa" | "GTe" | "MXP";
 }
