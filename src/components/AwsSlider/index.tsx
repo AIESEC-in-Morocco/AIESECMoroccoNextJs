@@ -79,7 +79,7 @@ export const Slider = () => {
           <span className="text-fuchsia-800">AIESEC in</span> 12 cities
         </p>
         <AutoplaySliderComponent
-          play={true}
+          play={false}
           cancelOnInteraction={false}
           interval={10000}
           // cssModule={AwesomeSliderStyles}

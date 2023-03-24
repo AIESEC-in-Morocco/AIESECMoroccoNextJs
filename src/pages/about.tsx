@@ -111,10 +111,10 @@ const AboutUs: NextPage = () => {
       <div className="bg-white relative">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent" />
         <div className="flex w-full justify-between ml-3 md:flex-row flex-col ">
-          <HistoryCards program="GV" />
-          <HistoryCards program="GTa" />
-          <HistoryCards program="GTe" />
-          <HistoryCards program="GTe" />
+          <HistoryCards program="MOR_1986" />
+          <HistoryCards program="MOR_1996" />
+          <HistoryCards program="MOR_2006" />
+          <HistoryCards program="MOR_2016" />
         </div>
       </div>
     </>
