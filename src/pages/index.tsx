@@ -89,6 +89,7 @@ export default function Home() {
           </p>
           <div className="flex w-full justify-between mt-4 md:flex-row flex-col md:h-[18.5rem] ">
             {Object.keys(PRODUCTS_COLOR).map((product) => {
+              //@ts-ignore
               return <ProgramCard key={product} program={product} />;
             })}
           </div>
