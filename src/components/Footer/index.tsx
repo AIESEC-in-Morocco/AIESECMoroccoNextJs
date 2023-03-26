@@ -24,6 +24,7 @@ export const Footer = ({}: FooterProps) => {
           <nav aria-label="Footer Nav" className="mt-12">
             <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
               {routing.map((route) => {
+                if (route.isButton) return null;
                 return (
                   <li
                     key={route.name}
