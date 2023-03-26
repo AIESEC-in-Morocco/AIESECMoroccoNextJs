@@ -14,11 +14,12 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
   const router = useRouter();
   const color = History[program].color;
   const description = History[program].description;
+  const subtitle = History[program].subtitle;
   return (
     <Card
       width={"full"}
       borderRadius="md"
-      className="md:mr-4 cursor-pointer"
+      className="mr-4 mb-3 shadow-2xl"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       // onClick={() => router.push(`/program/${program}`)}
@@ -39,15 +40,26 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
             unmountOnExit
             style={{ transitionDelay: "200ms" }}
           >
-            <div className="w-[75%] flex flex-col justify-center items-center text-white font-semibold">
-              {program == "MOR_1986"
-                ? description
-                : program == "MOR_1996"
-                ? description
-                : program == "MOR_2006"
-                ? description
-                : description}
-              <Divider className="font-bold mt-4" />
+            <div className="w-[75%] flex flex-col justify-center items-center">
+              <h1 className="text-xl sm:font-semibold md:font-bold lg:font-extrabold text-white">
+                {program == "MOR_1986"
+                  ? subtitle
+                  : program == "MOR_1996"
+                  ? subtitle
+                  : program == "MOR_2006"
+                  ? subtitle
+                  : subtitle}
+              </h1>
+              <p className=" text-white md:text-sm lg:text-base sm:font-normal md:font-semibold">
+                {program == "MOR_1986"
+                  ? description
+                  : program == "MOR_1996"
+                  ? description
+                  : program == "MOR_2006"
+                  ? description
+                  : description}
+                <Divider className="mt-4" borderWidth={1} />
+              </p>
             </div>
           </Fade>
         </div>
@@ -63,9 +75,9 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
       <CardFooter
         alignItems="center"
         justifyContent="center"
-        backgroundColor={hover ? color : "grey"}
+        backgroundColor={hover ? color : "#94a3b8"}
         borderBottomRadius="md"
-        className="font-semibold text-center text-white text-lg"
+        className="font-semibold text-center text-white text-lg "
       >
         {History[program].title}
       </CardFooter>

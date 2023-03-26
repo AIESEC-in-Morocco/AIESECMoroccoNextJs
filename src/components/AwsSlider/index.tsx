@@ -88,7 +88,13 @@ export const Slider = () => {
         >
           {images.map((image) => (
             <div key={image.id}>
-              <Image src={image.src} alt={image.alt} layout="fill" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
               <h1 className="relative text-white text-2xl text-center bg-black bg-opacity-50 py-2 px-2 rounded mt-96 font-bold">
                 {/* <ReactTypingEffect
                   // eraseDelay={10000}

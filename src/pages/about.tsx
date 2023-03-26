@@ -110,7 +110,7 @@ const AboutUs: NextPage = () => {
       <Slider />
       <div className="bg-white relative">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent" />
-        <div className="flex w-full justify-between ml-3 md:flex-row flex-col ">
+        <div className="flex w-full justify-between md:ml-3 md:flex-row flex-col ">
           <HistoryCards program="MOR_1986" />
           <HistoryCards program="MOR_1996" />
           <HistoryCards program="MOR_2006" />
