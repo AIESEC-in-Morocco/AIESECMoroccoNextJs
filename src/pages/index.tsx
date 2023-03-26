@@ -1,4 +1,4 @@
-import { Container, NavBar, ProgramCard } from "@/components";
+import { Container, Footer, NavBar, ProgramCard } from "@/components";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import Head from "next/head";
 import Image from "next/image";
@@ -87,12 +87,15 @@ export default function Home() {
             We aim to develop leadership qualities and capabilities in young
             people with these programs
           </p>
-          <div className="flex w-full justify-between mt-4 md:flex-row flex-col md:h-[18.5rem] ">
+          <div className="flex w-full justify-between mt-4 md:flex-row flex-col md:h-[18.5rem] -z-10">
             {Object.keys(PRODUCTS_COLOR).map((product) => {
               //@ts-ignore
               return <ProgramCard key={product} program={product} />;
             })}
           </div>
+        </div>
+        <div className="">
+          Helloooooooo Helloooooooo Helloooooooo Helloooooooo Helloooooooo
         </div>
 
         {/* <Image
@@ -104,6 +107,7 @@ export default function Home() {
           height={200}
         /> */}
       </Container>
+      <Footer />
     </>
   );
 }
