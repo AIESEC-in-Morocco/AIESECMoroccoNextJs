@@ -73,7 +73,7 @@ const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
 export const Slider = () => {
   return (
     <div className="relative p-32 pt-10 bg-white">
-      <div className="shadow-2xl p-24 pt-5 rounded-lg">
+      <div className="shadow-[20px_35px_60px_10px_rgba(0,0,0,0.3)] p-24 pt-5 rounded-[0.9rem]">
         <p className="text-6xl pb-3 font-semibold">
           {" "}
           <span className="text-fuchsia-800">AIESEC in</span> 12 cities

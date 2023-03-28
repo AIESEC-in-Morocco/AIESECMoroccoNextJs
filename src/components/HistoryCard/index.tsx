@@ -19,7 +19,7 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
     <Card
       width={"full"}
       borderRadius="md"
-      className="mr-4 mb-3 shadow-2xl"
+      className="pr-4 mb-3 shadow-2xl"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       // onClick={() => router.push(`/program/${program}`)}
