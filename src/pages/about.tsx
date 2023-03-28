@@ -1,13 +1,10 @@
 import { NavBar } from "@/components";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import { Slider } from "@/components/AwsSlider";
 import { HistoryCards } from "@/components/HistoryCard";
-import { position } from "@chakra-ui/react";
-
-// import { Swiper } from "@/components/Swiper";
+import Example from "@/components/Team";
 
 const images = [
   {
@@ -107,13 +104,19 @@ const AboutUs: NextPage = () => {
         </div>
         <Slider />
         <div className="bg-white relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent" />
-          <div className="flex w-full justify-between md:ml-3 md:flex-row flex-col ">
+          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
+            Our History
+          </h1>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b" />
+          <div className="flex w-full justify-between  md:flex-row flex-col ">
             <HistoryCards program="MOR_1986" />
             <HistoryCards program="MOR_1996" />
             <HistoryCards program="MOR_2006" />
             <HistoryCards program="MOR_2016" />
           </div>
+        </div>
+        <div className="bg-white relative">
+          <Example />
         </div>
       </div>
     </>

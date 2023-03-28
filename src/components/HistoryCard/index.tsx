@@ -16,10 +16,11 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
   const description = History[program].description;
   const subtitle = History[program].subtitle;
   return (
+    <div className="p-3">
     <Card
       width={"full"}
       borderRadius="md"
-      className="pr-4 mb-3 shadow-2xl"
+      className="mr-3"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       // onClick={() => router.push(`/program/${program}`)}
@@ -75,13 +76,14 @@ export const HistoryCards = ({ program }: ProgramCardProps) => {
       <CardFooter
         alignItems="center"
         justifyContent="center"
-        backgroundColor={hover ? color : "#94a3b8"}
+        backgroundColor={hover ? color : "#0f172a"}
         borderBottomRadius="md"
         className="font-semibold text-center text-white text-lg "
       >
         {History[program].title}
       </CardFooter>
     </Card>
+    </div>
   );
 };
 

@@ -12,9 +12,9 @@ export const History = {
       •Morocco Full member\n\
       •2 Local Branches",
     image: getImageFromGoogleDrive(
-      "https://drive.google.com/file/d/1Evc6I3BbcBCYtifnde_6Y56obLEvKqf-/view?usp=share_link"
+      "https://drive.google.com/file/d/1Hj9LfU5tBkP4JdbuS7oLIS4-gscpRiRG/view?usp=share_link"
     ),
-    color: "#71a1c5",
+    color: "#8f3c2c",
   },
   MOR_1996: {
     title: "1996-2005",
@@ -25,9 +25,9 @@ export const History = {
       •+ 20 Media content\n\
       •4 Local Branches",
     image: getImageFromGoogleDrive(
-      "https://drive.google.com/file/d/1qlyNbw-fAUTyD5cTJTx_HFNUF9iEsDpl/view?usp=share_link"
+      "https://drive.google.com/file/d/1mGiS6M1i3Q7MS5KwxS8-bPZkKPcS0T1j/view?usp=share_link"
     ),
-    color: "#8f3c2c",
+    color: "#693b3b",
   },
   MOR_2006: {
     title: "2006-2015",
@@ -41,12 +41,12 @@ export const History = {
         •Mena XLDS\n\
         •Contribution in the making of the AIESEC Way",
     image: getImageFromGoogleDrive(
-      "https://drive.google.com/file/d/1g8Pre2U9nlhXLEgiYYa2Oel-SF0gx6LK/view?usp=share_link"
+      "https://drive.google.com/file/d/1_etbFrUGgtc3bjaAPydhyLeq0etE8f04/view?usp=share_link"
     ),
-    color: "#693b3b",
+    color: "#6581b4",
   },
   MOR_2016: {
-    title: "2016-2020",
+    title: "2016-2022",
     subtitle: "The Evolution",
     description:
       "•13 Branches\n\
@@ -58,8 +58,8 @@ export const History = {
       •EwA Initiation & Focus on branding\n\
       •Encouraging Innovation",
     image: getImageFromGoogleDrive(
-      "https://drive.google.com/file/d/1bhF79vlpHDcwxHVJgcqBEsLnUFy7_RP8/view?usp=share_link"
+      "https://drive.google.com/file/d/1PbpFoVjeHcXevdNcnnEmTHFZMw53txJH/view?usp=share_link"
     ),
-    color: "#6581b4",
+    color: "#71a1c5",
   },
 };
