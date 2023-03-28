@@ -1,12 +1,33 @@
-import { Container, Footer, NavBar, ProgramCard } from "@/components";
-import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
+import {
+  Container,
+  Footer,
+  NavBar,
+  ProgramCard,
+  Testimonials,
+} from "@/components";
 import Head from "next/head";
 import Image from "next/image";
 import { PRODUCTS_COLOR } from "@/utils/products_color";
 import { useRouter } from "next/navigation";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   const navigate = useRouter();
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    arrows: false,
+    centerMode: true,
+    centerPadding: "20% 0 0",
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+  };
 
   return (
     <>
@@ -48,6 +69,11 @@ export default function Home() {
             />
           </div>
         </div>
+        <div className="w-full md:h-[50vh] flex flex-col justify-start items-start md:items-center mt-8 md:mt-0">
+          <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
+            Our Partners
+          </h1>
+        </div>
         <div className=" flex flex-col md:flex-row mt-6  items-center justify-center md:h-[60vh]">
           <div className="bg-slate-700 w-full">
             <Image
@@ -79,7 +105,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-col md:h-[100vh] justify-center items-start md:items-center mt-8 md:mt-0">
+        <div className="w-full flex flex-col md:h-[90vh] justify-center items-start md:items-center mt-8 md:mt-0">
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
             Our Programms
           </h1>
@@ -94,8 +120,15 @@ export default function Home() {
             })}
           </div>
         </div>
-        <div className="">
-          Helloooooooo Helloooooooo Helloooooooo Helloooooooo Helloooooooo
+        <div className="w-full h-screen">
+          <h1 className="md:text-4xl text-3xl font-semibold text-gray-700">
+            <span className="text-primary">Stories</span> we help to create
+          </h1>
+          <Slider className="mt-8" {...settings}>
+            <Testimonials name="opaa" />
+            <Testimonials name="uwu" />
+            <Testimonials name="hihih" />
+          </Slider>
         </div>
 
         {/* <Image
