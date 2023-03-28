@@ -13,11 +13,17 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TESTIMONIALS from "@/utils/testimonials";
 
 export default function Home() {
   const navigate = useRouter();
 
-  const settings = {
+  const partner_settings = {
+    dots: false,
+    infinite: true,
+  };
+
+  const testimonials_settings = {
     dots: true,
     infinite: false,
     arrows: false,
@@ -73,6 +79,7 @@ export default function Home() {
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
             Our Partners
           </h1>
+          <Slider></Slider>
         </div>
         <div className=" flex flex-col md:flex-row mt-6  items-center justify-center md:h-[60vh]">
           <div className="bg-slate-700 w-full">
@@ -124,10 +131,10 @@ export default function Home() {
           <h1 className="md:text-4xl text-3xl font-semibold text-gray-700">
             <span className="text-primary">Stories</span> we help to create
           </h1>
-          <Slider className="mt-8" {...settings}>
-            <Testimonials name="opaa" />
-            <Testimonials name="uwu" />
-            <Testimonials name="hihih" />
+          <Slider className="mt-8" {...testimonials_settings}>
+            {TESTIMONIALS.map((testimonial) => {
+              return <Testimonials key={testimonial.name} {...testimonial} />;
+            })}
           </Slider>
         </div>
 

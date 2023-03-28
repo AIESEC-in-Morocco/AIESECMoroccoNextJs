@@ -1,36 +1,57 @@
 import BlockQuote from "@/assets/logos/blockquote";
+import { PRODUCTS_COLOR } from "@/utils/products_color";
+import clsx from "clsx";
 
-export const Testimonials = ({ name }: TestimonialsProps) => {
+export const Testimonials = ({
+  name,
+  testimonial,
+  country,
+  picture_link,
+  origin_city,
+  program,
+}: TestimonialsProps) => {
   return (
-    <div className="flex h-[70vh]  w-full pr-8 flex-col md:flex-row">
-      <div className="w-8/12 h-full">
+    <div className="flex md:h-[70vh] w-full pr-8 flex-col md:flex-row">
+      <div className="md:w-8/12 md:h-full h-48 hidden md:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="object-cover w-full h-full  md:rounded-l-md"
-          src={
-            "https://images.unsplash.com/photo-1618477460930-d8bffff64172?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-          }
+          className="object-cover w-full h-full rounded-t-md md:rounded-t-none md:rounded-l-md md:rounded-tl-md"
+          src={picture_link}
           alt="image"
         />
       </div>
-      <div className="w-full h-full bg-gv/20 md:rounded-r-md flex flex-col justify-center items-start p-8">
-        <BlockQuote height={"50px"} width={"50px"} fill={"#f85a40"} />
+      <div
+        className={clsx(
+          "w-full h-full md:rounded-r-md flex flex-col justify-center items-start p-8",
+          program == "GV" && "bg-gv/20",
+          program == "GTa" && "bg-gta/20",
+          program == "GTe" && "bg-gte/20",
+          program == "MXP" && "bg-primary/20"
+        )}
+      >
+        <BlockQuote
+          height={"50px"}
+          width={"50px"}
+          fill={PRODUCTS_COLOR[program].color}
+        />
 
         <blockquote className="pt-8">
-          <p className="md:text-xl font-sans font-light text-black">
-            AIESEC helped me to achieve one my career goals which is having a
-            professional experience abroad. I learned several things during this
-            opportunity such as connecting with people from different cultures,
-            collaborating with businessmen to invite them to the forum (world
-            cooperation industries forum) I was working on with Bosphorus expo.
-            It was an honour to be part of this project and I&apos;m thankful to
-            AIESEC for giving me this wonderful opportunity
+          <p className="md:text-xl font-sans font-light text-black overflow-y-scroll md:overflow-hidden md:h-auto h-96">
+            {testimonial}
           </p>
           <h5 className="mt-8 font-sans font-semibold text-black">
-            Random Name<span className="font-sans font-light">, Ukrain</span>
+            {name}
+            <span className="font-sans font-light">, {origin_city}</span>
           </h5>
           <h5 className="text-gray-500 font-sans font-thin ">
-            Volunteered in Ukrain
+            {program == "GV"
+              ? "Volunteered in"
+              : program == "GTa"
+              ? "Interned  in"
+              : program == "MXP"
+              ? "AIESECer from"
+              : "Taught in"}{" "}
+            {country}
           </h5>
         </blockquote>
       </div>
@@ -40,7 +61,9 @@ export const Testimonials = ({ name }: TestimonialsProps) => {
 
 export interface TestimonialsProps {
   name: string;
-  // testimonial: string;
-  // country: string;
-  // picture_link: string;
+  testimonial: string;
+  country: string;
+  picture_link: string;
+  origin_city: string;
+  program: "GV" | "GTa" | "GTe" | "MXP";
 }
