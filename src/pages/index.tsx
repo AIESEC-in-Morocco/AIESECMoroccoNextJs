@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Container,
   Footer,
@@ -14,13 +15,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TESTIMONIALS from "@/utils/testimonials";
+import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 
 export default function Home() {
   const navigate = useRouter();
 
   const partner_settings = {
-    dots: false,
+    dots: true,
     infinite: true,
+    slidesToShow: 3,
+    speed: 500,
+    adaptiveHeight: true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 100,
+    cssEase: "linear",
   };
 
   const testimonials_settings = {
@@ -79,7 +88,56 @@ export default function Home() {
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
             Our Partners
           </h1>
-          <Slider></Slider>
+          <Slider className="w-full mt-8" {...partner_settings}>
+            <div className="h-44 w-auto">
+              <img
+                className="h-full w-full object-fill"
+                alt="UM6P"
+                src={getImageFromGoogleDrive(
+                  "https://drive.google.com/file/d/1bJV3PSxDFyS5Gk1y_ipwx9uvuq3j0Wrf/view?usp=sharing"
+                )}
+              />
+            </div>
+            <div className="h-44 w-auto">
+              <img
+                className="h-full w-full object-cover"
+                alt="Al Akhawayn University"
+                src={getImageFromGoogleDrive(
+                  "https://drive.google.com/file/d/1KcIzrthJn7DCU53wJnKncYgdQguU2s4B/view?usp=share_link"
+                )}
+              />
+            </div>
+
+            <div className="h-44 w-auto">
+              <img
+                className="h-full w-full object-cover"
+                alt="ISIC"
+                src={getImageFromGoogleDrive(
+                  "https://drive.google.com/file/d/1SsojBdXzsftQ7FWx3Lt5GV0n5B5HBqiI/view?usp=share_link"
+                )}
+              />
+            </div>
+
+            <div className="h-44 w-auto">
+              <img
+                className="h-auto w-full object-cover"
+                alt="Walmas"
+                src={getImageFromGoogleDrive(
+                  "https://drive.google.com/file/d/1NG0N7anRwenFAHznf9W_PANMq9n5ylwq/view?usp=share_link"
+                )}
+              />
+            </div>
+
+            <div className="h-44 w-auto">
+              <img
+                className="h-full w-full object-cover"
+                alt="Hell"
+                src={getImageFromGoogleDrive(
+                  "https://drive.google.com/file/d/1VT6CB13KsWDBAvS4ZmohnmEPiaEqoA3i/view?usp=share_link"
+                )}
+              />
+            </div>
+          </Slider>
         </div>
         <div className=" flex flex-col md:flex-row mt-6  items-center justify-center md:h-[60vh]">
           <div className="bg-slate-700 w-full">
