@@ -121,7 +121,8 @@ export default function Example() {
                   className="h-16 w-16 rounded-full"
                   src={person.imageUrl}
                   alt=""
-                  layout="fill"
+                  width={64}
+                  height={64}
                 />
                 <div>
                   <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
