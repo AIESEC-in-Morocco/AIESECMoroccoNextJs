@@ -6,7 +6,7 @@ import Image from "next/image";
 const people = [
   {
     name: "Ikram Atif",
-    role: "MCP in Charge",
+    role: "MCP",
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1oVnPO129X6mp59sPheyNVotI-Z-oY22d/view?usp=sharing"
     ),
