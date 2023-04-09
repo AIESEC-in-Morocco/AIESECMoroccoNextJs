@@ -1,7 +1,7 @@
 import { TestimonialsProps } from "@/components";
 import getImageFromGoogleDrive from "./getImageFromGoogleDrive";
 
-export const TESTIMONIALS: TestimonialsProps[] = [
+const TESTIMONIALS: TestimonialsProps[] = [
   {
     name: "Asmae",
     testimonial:
