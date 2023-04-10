@@ -74,7 +74,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+        <div className="pt-12 lg:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold text-center">
             Our Partners
           </h1>
@@ -127,7 +127,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-col my-36 h-auto justify-center items-start md:items-center">
+        <div className="w-full flex flex-col md:my-36 my-8 h-auto justify-center items-start md:items-center">
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
             Our Programms
           </h1>
