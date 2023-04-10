@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
       <NavBar />
       <Container>
-        <div className="flex h-[90vh] items-center justify-center flex-col-reverse md:flex-row text-gray-700 font-sans">
+        <div className="flex h-auto md:h-[90vh] items-center justify-center flex-col-reverse md:flex-row text-gray-700 font-sans">
           <div className=" w-full grow-[2] mt-4 md:mt-0 md:pr-8">
             <h1 className="md:text-5xl text-3xl font-semibold">
               <span className="text-primary">Leadership</span> is for every
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </div>
         <div className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
-          <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
+          <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold text-center">
             Our Partners
           </h1>
 
@@ -89,7 +89,7 @@ export default function Home() {
                   <img
                     src={getImageFromGoogleDrive(partner.logo_link)}
                     alt={partner.name}
-                    className="object-contain"
+                    className="object-contain grayscale hover:grayscale-0 transition duration-300"
                   />
                 </div>
               );
@@ -127,7 +127,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-col md:h-[90vh] justify-center items-start md:items-center mt-8 md:mt-0">
+        <div className="w-full flex flex-col my-36 h-auto justify-center items-start md:items-center">
           <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold">
             Our Programms
           </h1>
@@ -142,7 +142,7 @@ export default function Home() {
             })}
           </div>
         </div>
-        <div className="w-full h-screen">
+        <div className="w-full h-auto mb-12">
           <h1 className="md:text-4xl text-3xl font-semibold text-gray-700">
             <span className="text-primary">Stories</span> we help to create
           </h1>
