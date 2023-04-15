@@ -13,6 +13,7 @@ const AboutUs: NextPage = () => {
       <Head>
         <title>AboutUs</title>
       </Head>
+      <NavBar />
       <div className="w-full h-screen">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -25,7 +26,7 @@ const AboutUs: NextPage = () => {
           className="object-cover object-center w-full h-full"
           style={{ position: "fixed" }}
         />
-        <NavBar />
+       
         <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl p-5 sm:p-10 mr-5 sm:mr-10 md:mr-32  bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur">
           <h1 className="text-base sm:text-lg md:text-2xl text-white mb-4 text-center">
             AIESEC in Morocco
@@ -60,6 +61,9 @@ const AboutUs: NextPage = () => {
         <Team />
       </div>
       <div className="bg-white relative pb-24">
+        <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
+          Our Golden Circle
+        </h1>
         <img
           src={getImageFromGoogleDrive(
             "https://drive.google.com/file/d/1Hy_nfvtH9bbFqcYramGYrQOz9hNbSjhI/view?usp=share_link"
