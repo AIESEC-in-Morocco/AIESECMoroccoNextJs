@@ -10,8 +10,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1oVnPO129X6mp59sPheyNVotI-Z-oY22d/view?usp=sharing"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/reine.descoeurs.9#",
+    linkedInUrl: "https://www.linkedin.com/in/ikram-atif/",
     instagramUrl: "#",
   },
   {
@@ -20,8 +20,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1jmIafnr4ggHbs6LLIQ6E02V9Q_uj2Ui6/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/goddamn.21#",
+    linkedInUrl: "https://www.linkedin.com/in/marouane-elmarsi/",
     instagramUrl: "#",
   },
   {
@@ -30,8 +30,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/16bZhslsp2hJ1D8vDI4N6raG1CRz8NYt8/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/mohammedkhalilbadaoui",
+    linkedInUrl: "https://www.linkedin.com/in/mohammed-khalil-badaoui-2222031b8/",
     instagramUrl: "#",
   },
   {
@@ -40,8 +40,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1sDucWezReowiUGWVCvQGGPP-P8oMxQ6a/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/medtaha.idrissi#",
+    linkedInUrl: "https://www.linkedin.com/in/mohamed-taha-i5/",
     instagramUrl: "#",
   },
   {
@@ -50,8 +50,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1Fo6r3ZSzf6GMEsFIA2gs3nC3lkRH_ngn/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/ossama.karim.5",
+    linkedInUrl: "https://www.linkedin.com/in/oussama-karim-3976a9174/",
     instagramUrl: "#",
   },
   {
@@ -60,8 +60,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1-BGoAz83kdav3KEbr8J6zHr1c7Ev11XR/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/rayane.soundouss",
+    linkedInUrl: "https://www.linkedin.com/in/rayaneouhssine/",
     instagramUrl: "#",
   },
   {
@@ -70,8 +70,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1KC4E3g8ET-yMn69sFit8h2IcuMmBJNgp/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/salma.maazouz.5#",
+    linkedInUrl: "https://www.linkedin.com/in/salma-maazouze-a5b30816a/",
     instagramUrl: "#",
   },
   {
@@ -80,8 +80,8 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/1zteGCOeY0oaEpgC8xbhav0I-ZgAtbZYi/view?usp=share_link"
     ),
-    facebookUrl: "#",
-    linkedInUrl: "#",
+    facebookUrl: "https://web.facebook.com/walid.taleb.902",
+    linkedInUrl: "https://www.linkedin.com/in/walid-taleb-a8a6b1192/",
     instagramUrl: "#",
   },
   {
@@ -90,13 +90,13 @@ const people = [
     imageUrl: getImageFromGoogleDrive(
       "https://drive.google.com/file/d/17kPRpuIMSYoLA8fkm9mcZtm3jLxkofnh/view?usp=share_link"
     ),
-    facebookUrl: "#",
+    facebookUrl: "https://web.facebook.com/yassine.yasser.568",
     linkedInUrl: "#",
     instagramUrl: "#",
   },
 ];
 
-export default function Example() {
+export default function Team() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-y-20 gap-x-8 px-6 lg:px-8 xl:grid-cols-3">
@@ -143,12 +143,6 @@ export default function Example() {
                       className="text-base font-semibold leading-6 text-black-600"
                     >
                       <Icon as={FaFacebook} />
-                    </a>
-                    <a
-                      href={person.instagramUrl}
-                      className="text-base font-semibold leading-6 text-black-600"
-                    >
-                      <Icon as={FaInstagram} />
                     </a>
                   </div>
                 </div>

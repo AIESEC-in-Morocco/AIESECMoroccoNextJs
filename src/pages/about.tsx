@@ -4,7 +4,7 @@ import Head from "next/head";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import { Slider } from "@/components/AwsSlider";
 import { HistoryCards } from "@/components/HistoryCard";
-import Example from "@/components/Team";
+import Team from "@/components/Team";
 import { Footer } from "@/components/Footer";
 
 const AboutUs: NextPage = () => {
@@ -57,7 +57,18 @@ const AboutUs: NextPage = () => {
         </div>
       </div>
       <div className="bg-white relative">
-        <Example />
+        <Team />
+      </div>
+      <div className="bg-white relative pb-24">
+        <img
+          src={getImageFromGoogleDrive(
+            "https://drive.google.com/file/d/1Hy_nfvtH9bbFqcYramGYrQOz9hNbSjhI/view?usp=share_link"
+          )}
+          alt="Hero Background"
+          width={1920}
+          height={1080}
+          className="object-cover object-center w-full h-full"
+        />
       </div>
       <div className="relative">
         <Footer />
