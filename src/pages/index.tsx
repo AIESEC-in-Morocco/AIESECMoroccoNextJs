@@ -43,6 +43,7 @@ export default function Home() {
           content="Develop your leadership with AIESEC"
           key="title"
         />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <NavBar />
       <Container>
