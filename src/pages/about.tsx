@@ -66,9 +66,6 @@ const AboutUs: NextPage = () => {
         <Team />
       </div>
       <div className="bg-white relative pb-24">
-        <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
-          Our Golden Circle
-        </h1>
         <img
           src={getImageFromGoogleDrive(
             "https://drive.google.com/file/d/1Hy_nfvtH9bbFqcYramGYrQOz9hNbSjhI/view?usp=share_link"

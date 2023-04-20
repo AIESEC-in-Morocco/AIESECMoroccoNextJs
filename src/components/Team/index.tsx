@@ -133,13 +133,13 @@ export default function Team() {
                   </p>
                   <div className="flex gap-4">
                     <a
-                      href={person.linkedInUrl}  target="_blank"
+                      href={person.linkedInUrl}
                       className="text-base font-semibold leading-6 text-black-600"
                     >
                       <Icon as={FaLinkedin} />
                     </a>
                     <a
-                      href={person.facebookUrl}  target="_blank"
+                      href={person.facebookUrl}
                       className="text-base font-semibold leading-6 text-black-600"
                     >
                       <Icon as={FaFacebook} />
