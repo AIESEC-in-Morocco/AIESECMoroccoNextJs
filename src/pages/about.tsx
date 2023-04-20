@@ -14,9 +14,9 @@ const AboutUs: NextPage = () => {
         <title>AboutUs</title>
       </Head>
       <NavBar />
-      <div className="w-full h-screen">
+      <div className="w-full h-screen" style={{backgroundImage:' url( "hero-image.jpg" ) ', backgroundAttachment: "fixed", backgroundSize: "cover"}}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        {/* <img
           src={getImageFromGoogleDrive(
             "https://drive.google.com/file/d/1ev9R4IvCF0ZPeiXNWllPCVgmLLuGp1zo/view?usp=share_link"
           )}
@@ -25,7 +25,7 @@ const AboutUs: NextPage = () => {
           height={1080}
           className="object-cover object-center w-full h-full"
           style={{ position: "fixed" }}
-        />
+        /> */}
        
         <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl p-5 sm:p-10 mr-5 sm:mr-10 md:mr-32  bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur">
           <h1 className="text-base sm:text-lg md:text-2xl text-white mb-4 text-center">
