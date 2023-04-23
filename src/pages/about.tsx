@@ -4,7 +4,7 @@ import Head from "next/head";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import { Slider } from "@/components/AwsSlider";
 import { HistoryCards } from "@/components/HistoryCard";
-import Example from "@/components/Team";
+import Team from "@/components/Team";
 import { Footer } from "@/components/Footer";
 
 const AboutUs: NextPage = () => {
@@ -13,9 +13,10 @@ const AboutUs: NextPage = () => {
       <Head>
         <title>AboutUs</title>
       </Head>
-      <div className="w-full h-screen">
+      <NavBar />
+      <div className="w-full h-screen" style={{backgroundImage:' url( "hero-image.jpg" ) ', backgroundAttachment: "fixed", backgroundSize: "cover"}}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        {/* <img
           src={getImageFromGoogleDrive(
             "https://drive.google.com/file/d/1ev9R4IvCF0ZPeiXNWllPCVgmLLuGp1zo/view?usp=share_link"
           )}
@@ -24,8 +25,8 @@ const AboutUs: NextPage = () => {
           height={1080}
           className="object-cover object-center w-full h-full"
           style={{ position: "fixed" }}
-        />
-        <NavBar />
+        /> */}
+       
         <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl p-5 sm:p-10 mr-5 sm:mr-10 md:mr-32  bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur">
           <h1 className="text-base sm:text-lg md:text-2xl text-white mb-4 text-center">
             AIESEC in Morocco
@@ -57,7 +58,18 @@ const AboutUs: NextPage = () => {
         </div>
       </div>
       <div className="bg-white relative">
-        <Example />
+        <Team />
+      </div>
+      <div className="bg-white relative pb-24">
+        <img
+          src={getImageFromGoogleDrive(
+            "https://drive.google.com/file/d/1Hy_nfvtH9bbFqcYramGYrQOz9hNbSjhI/view?usp=share_link"
+          )}
+          alt="Hero Background"
+          width={1920}
+          height={1080}
+          className="object-cover object-center w-full h-full"
+        />
       </div>
       <div className="relative">
         <Footer />

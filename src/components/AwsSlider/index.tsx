@@ -72,18 +72,18 @@ const AutoplaySliderComponent = withAutoplay(AwesomeSlider);
 
 export const Slider = () => {
   return (
-    <div className="relative p-32 pt-10 bg-white">
-      <div className="shadow-[20px_35px_60px_10px_rgba(0,0,0,0.3)] p-24 pt-5 rounded-[0.9rem]">
-        <p className="text-6xl pb-3 font-semibold">
+    <div className="relative p-24 pt-10 bg-white">
+      <div className="shadow-[20px_35px_60px_10px_rgba(0,0,0,0.3)] p-5 max-sm:pb-12 sm:p-12 md:p-16 lg:p-24 lg:pt-5 md:pt-5 sm:pt-5 rounded-[0.9rem]">
+        <p className="text-lg md:text-xl sm:text-lg lg:text-5xl pb-3 font-semibold">
           {" "}
-          <span className="text-fuchsia-800">AIESEC in</span> 12 cities
+          <span className="text-[#477dee]">AIESEC </span> in 12 cities
         </p>
         <AutoplaySliderComponent
-          play={false}
+          play={true}
           cancelOnInteraction={false}
           interval={10000}
           // cssModule={AwesomeSliderStyles}
-          animation="cubeAnimation"
+          // animation="cubeAnimation"
           style={{ width: "100%", height: "30rem" }}
         >
           {images.map((image) => (
