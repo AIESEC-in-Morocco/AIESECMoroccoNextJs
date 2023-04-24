@@ -12,6 +12,10 @@ nextConfig = {
         protocol: "https",
         hostname: "**.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
     ],
   },
   webpack(config) {
