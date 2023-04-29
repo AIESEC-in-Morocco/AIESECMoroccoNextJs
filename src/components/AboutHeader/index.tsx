@@ -89,7 +89,7 @@ const WiA = () => {
         colSpan={{ sm: 2, md: 1}}
         className="order-1 md:order-1"
         display="flex"
-        bg={"red"}
+        bg={"black"}
         justifyContent="center"
         alignItems="center"
         borderRadius="md"
