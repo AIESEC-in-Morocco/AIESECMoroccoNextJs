@@ -84,12 +84,12 @@ const WiA = () => {
       templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(3, 1fr)" }}
       gap={4}
       className="flex flex-col md:flex-row mb-3"
-      bg={"green.500"}
     >
       <GridItem
         colSpan={{ sm: 2, md: 1, lg: 1 }}
         className="order-1 md:order-1"
         display="flex"
+        bg={"green.500"}
         justifyContent="center"
         alignItems="center"
         borderRadius="md"
@@ -101,7 +101,7 @@ const WiA = () => {
             "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
           )}
           alt="My Image"
-          style={{ borderRadius: "5%", maxWidth: "50%" }}
+          style={{ borderRadius: "5%", maxWidth: "100%" }}
         />
       </GridItem>
       <GridItem
