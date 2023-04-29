@@ -89,7 +89,7 @@ const WiA = () => {
         colSpan={{ sm: 2, md: 1}}
         className="order-1 md:order-1"
         display="flex"
-        bg={"black.500"}
+        bg={"primary.500"}
         justifyContent="center"
         alignItems="center"
         borderRadius="md"
@@ -101,7 +101,7 @@ const WiA = () => {
             "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
           )}
           alt="My Image"
-          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto" }}
+          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto", height: "100%" }}
         />
       </GridItem>
       <GridItem
