@@ -89,7 +89,6 @@ const WiA = () => {
         colSpan={{ sm: 2, md: 1}}
         className="order-1 md:order-1"
         display="flex"
-        bg={"black"}
         justifyContent="center"
         alignItems="center"
         borderRadius="md"
@@ -107,7 +106,6 @@ const WiA = () => {
         colSpan={{ sm: 2, md: 2}}
         className="order-2 md:order-2"
         display="flex"
-        bg="tomato"
       >
         {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
         <div className="lg:pr-24 lg:pl-24">
@@ -119,24 +117,24 @@ const WiA = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-gray rounded-lg p-8 mb-8">
+            <div className="bg-gray rounded-lg p-8">
               <h4 className="text-2xl font-bold">109+</h4>
               <span className="text-primary font-semibold text-sm">Countries &amp; Territories</span>
             </div>
-            <div className="bg-gray rounded-lg p-8 mb-8">
+            <div className="bg-gray rounded-lg p-8">
               <h4 className="text-2xl font-bold">5000+</h4>
               <span className="text-primary font-semibold text-sm">Partner Organizations</span>
             </div>
-            <div className="bg-gray rounded-lg p-8 mb-8">
+            <div className="bg-gray rounded-lg p-8">
               <h4 className="text-2xl font-bold">30.000+</h4>
               <span className="text-primary font-semibold text-sm">Experiences Every Year</span>
             </div>
-            <div className="bg-gray rounded-lg p-8 mb-8">
+            <div className="bg-gray rounded-lg p-8">
               <h4 className="text-2xl font-bold">75</h4>
               <span className="text-primary font-semibold text-sm">Years of impact</span>
             </div>
           </div>
-          <p className="mb-8">
+          <p className="mb-4">
             AIESEC is a global platform for young people to develop their
             leadership potential through practical experiences of many kinds,
             including internships, volunteering opportunities, and more. Founded
