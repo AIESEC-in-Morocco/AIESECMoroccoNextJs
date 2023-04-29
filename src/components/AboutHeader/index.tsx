@@ -93,7 +93,6 @@ const WiA = () => {
         justifyContent="center"
         alignItems="center"
         borderRadius="md"
-        height="fit-content"
       >
         {/* Content for 1/3 column on top for small screens, and on the left for larger screens */}
         <img
