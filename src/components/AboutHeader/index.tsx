@@ -81,12 +81,12 @@ const WiA = () => {
     //   </GridItem>
     // </Grid>
     <Grid
-      templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(3, 1fr)" }}
+      templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
       className="flex flex-col md:flex-row mb-3"
     >
       <GridItem
-        colSpan={{ sm: 2, md: 1, lg: 1 }}
+        colSpan={{ sm: 2, md: 1}}
         className="order-1 md:order-1"
         display="flex"
         bg={"green.500"}
@@ -101,11 +101,11 @@ const WiA = () => {
             "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
           )}
           alt="My Image"
-          style={{ borderRadius: "5%", maxWidth: "100%" }}
+          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto" }}
         />
       </GridItem>
       <GridItem
-        colSpan={{ sm: 2, md: 2, lg: 2 }}
+        colSpan={{ sm: 2, md: 2}}
         className="order-2 md:order-2"
         display="flex"
         bg="tomato"
