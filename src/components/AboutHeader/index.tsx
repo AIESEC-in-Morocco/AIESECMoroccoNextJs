@@ -81,11 +81,11 @@ const WiA = () => {
     //   </GridItem>
     // </Grid>
     <Grid templateColumns={{ sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }} gap={4} className="flex flex-col md:flex-row">
-      <GridItem colSpan={{ sm: 2, md: 1 }} bg="" h="100" className="order-1 md:order-2 bg-blue-500">
-        {/* Content for 1/3 column on bottom for small screens, and on the left for larger screens */}
+      <GridItem colSpan={{ sm: 2, md: 1 }} bg="blue.500" h="10" className="order-1 md:order-1">
+        {/* Content for 1/3 column on top for small screens, and on the left for larger screens */}
       </GridItem>
-      <GridItem colSpan={{ sm: 2, md: 2 }} bg="" h="100" className="order-2 md:order-1 bg-green-500">
-        {/* Content for 2/3 column on top for small screens, and on the right for larger screens */}
+      <GridItem colSpan={{ sm: 2, md: 2 }} bg="green.500" h="10" className="order-2 md:order-2">
+        {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
       </GridItem>
     </Grid>
 
