@@ -83,7 +83,7 @@ const WiA = () => {
     <Grid
       templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
-      className="flex flex-col md:flex-row mb-3"
+      className="flex flex-col md:flex-row mb-3 p-10"
     >
       <GridItem
         colSpan={{ sm: 2, md: 1}}
@@ -119,21 +119,21 @@ const WiA = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-gray-100 rounded-lg p-8 mb-8">
-              <h4 className="text-4xl font-bold">109+</h4>
-              <span className="text-gray-500">Countries &amp; Territories</span>
+            <div className="bg-gray rounded-lg p-8 mb-8">
+              <h4 className="text-2xl font-bold">109+</h4>
+              <span className="text-primary font-semibold text-sm">Countries &amp; Territories</span>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8 mb-8">
-              <h4 className="text-4xl font-bold">5000+</h4>
-              <span className="text-gray-500">Partner Organizations</span>
+            <div className="bg-gray rounded-lg p-8 mb-8">
+              <h4 className="text-2xl font-bold">5000+</h4>
+              <span className="text-primary font-semibold text-sm">Partner Organizations</span>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8 mb-8">
-              <h4 className="text-4xl font-bold">30.000+</h4>
-              <span className="text-gray-500">Experiences Every Year</span>
+            <div className="bg-gray rounded-lg p-8 mb-8">
+              <h4 className="text-2xl font-bold">30.000+</h4>
+              <span className="text-primary font-semibold text-sm">Experiences Every Year</span>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8 mb-8">
-              <h4 className="text-4xl font-bold">75</h4>
-              <span className="text-gray-500">Years of impact</span>
+            <div className="bg-gray rounded-lg p-8 mb-8">
+              <h4 className="text-2xl font-bold">75</h4>
+              <span className="text-primary font-semibold text-sm">Years of impact</span>
             </div>
           </div>
           <p className="mb-8">
