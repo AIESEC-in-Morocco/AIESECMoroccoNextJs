@@ -11,16 +11,20 @@ import Image from "next/image";
 import { PRODUCTS_COLOR } from "@/utils/products_color";
 import { useRouter } from "next/navigation";
 import Slider from "react-slick";
-
+import { useNextSanityImage } from "next-sanity-image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TESTIMONIALS from "@/utils/testimonials";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
-import Link from "next/link";
+import { client, useSanityImage } from "@/sanity";
+import getTestimoniels from "@/queries/getTestimoniels";
 
-export default function Home() {
+export default function Home({ testimonials }: IndexProps) {
   const navigate = useRouter();
+  const imageProps = useSanityImage(testimonials[0].image);
+
+  console.log(imageProps);
 
   const testimonials_settings = {
     dots: true,
@@ -165,4 +169,36 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const testimonials = await client.fetch(getTestimoniels);
+
+  return {
+    props: {
+      testimonials,
+    },
+  };
+}
+
+interface Testimonial {
+  ep_name: string;
+  testimonial: string;
+  country_visited: string;
+  program: {
+    name: string;
+  };
+  entity: {
+    city: string;
+  };
+  image: {
+    assets: {
+      _ref: string;
+      _type: string;
+    };
+  };
+}
+
+interface IndexProps {
+  testimonials: Testimonial[];
 }
