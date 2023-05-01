@@ -1,5 +1,5 @@
 import { createClient } from "next-sanity";
-import { useNextSanityImage } from "next-sanity-image";
+import { UseNextSanityImageProps, useNextSanityImage } from "next-sanity-image";
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
@@ -8,7 +8,7 @@ const client = createClient({
   apiVersion: "2021-03-25",
 });
 
-const useSanityImage = (source: any) => {
+const useSanityImage = (source: any): UseNextSanityImageProps | null => {
   return useNextSanityImage(client, source);
 };
 

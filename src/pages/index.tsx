@@ -11,10 +11,8 @@ import Image from "next/image";
 import { PRODUCTS_COLOR } from "@/utils/products_color";
 import { useRouter } from "next/navigation";
 import Slider from "react-slick";
-import { useNextSanityImage } from "next-sanity-image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import TESTIMONIALS from "@/utils/testimonials";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
 import { client, useSanityImage } from "@/sanity";
@@ -22,9 +20,6 @@ import getTestimoniels from "@/queries/getTestimoniels";
 
 export default function Home({ testimonials }: IndexProps) {
   const navigate = useRouter();
-  const imageProps = useSanityImage(testimonials[0].image);
-
-  console.log(imageProps);
 
   const testimonials_settings = {
     dots: true,
@@ -151,8 +146,18 @@ export default function Home({ testimonials }: IndexProps) {
             <span className="text-primary">Stories</span> we help to create
           </h1>
           <Slider className="mt-8" {...testimonials_settings}>
-            {TESTIMONIALS.map((testimonial) => {
-              return <Testimonials key={testimonial.name} {...testimonial} />;
+            {testimonials.map((testimonial) => {
+              return (
+                <Testimonials
+                  key={testimonial.ep_name}
+                  name={testimonial.ep_name}
+                  testimonial={testimonial.testimonial}
+                  image={testimonial.image}
+                  country={testimonial.country_visited}
+                  origin_city={testimonial.entity.city}
+                  program={testimonial.program.name}
+                />
+              );
             })}
           </Slider>
         </div>
@@ -186,7 +191,7 @@ interface Testimonial {
   testimonial: string;
   country_visited: string;
   program: {
-    name: string;
+    name: "GV" | "GTa" | "GTe" | "MXP";
   };
   entity: {
     city: string;
