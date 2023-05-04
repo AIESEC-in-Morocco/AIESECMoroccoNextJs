@@ -21,7 +21,9 @@ export const Testimonials = ({
         <img
           className="object-cover w-full h-full rounded-t-md md:rounded-t-none md:rounded-l-md md:rounded-tl-md"
           alt="image"
-          {...imageProps}
+          src={imageProps?.src}
+          width={imageProps?.width}
+          height={imageProps?.height}
         />
       </div>
       <div
