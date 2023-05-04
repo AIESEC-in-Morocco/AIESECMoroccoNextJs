@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
-import { client, useSanityImage } from "@/sanity";
+import { client } from "@/sanity";
 import getTestimoniels from "@/queries/getTestimoniels";
 
 export default function Home({ testimonials }: IndexProps) {
