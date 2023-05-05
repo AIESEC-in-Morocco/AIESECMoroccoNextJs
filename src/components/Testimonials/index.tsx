@@ -1,5 +1,5 @@
 import BlockQuote from "@/assets/logos/blockquote";
-import { useSanityImage } from "@/sanity";
+import { useSanityImage } from "@/integrations/sanity";
 import { PRODUCTS_COLOR } from "@/utils/products_color";
 import clsx from "clsx";
 import { UseNextSanityImageProps } from "next-sanity-image";

@@ -38,6 +38,7 @@
     "react-easy-swipe": "^0.0.23",
     "react-hook-form": "^7.43.5",
     "react-icons": "^4.8.0",
+    "react-query": "^3.39.3",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",
     "react-typing-effect": "^2.0.5",
