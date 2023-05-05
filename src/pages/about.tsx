@@ -7,6 +7,7 @@ import { HistoryCards } from "@/components/HistoryCard";
 import Team from "@/components/Team";
 import { Footer } from "@/components/Footer";
 import WiS from "@/components/AboutHeader";
+import { Values } from "@/components/Values";
 
 const AboutUs: NextPage = () => {
   return (
@@ -17,6 +18,7 @@ const AboutUs: NextPage = () => {
       <NavBar />
       <Container>
         <WiS />
+        <Values />
         <Slider />
         <div className="">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
