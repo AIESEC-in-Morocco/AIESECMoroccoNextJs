@@ -1,23 +1,29 @@
 import BlockQuote from "@/assets/logos/blockquote";
+import { useSanityImage } from "@/integrations/sanity";
 import { PRODUCTS_COLOR } from "@/utils/products_color";
 import clsx from "clsx";
+import { UseNextSanityImageProps } from "next-sanity-image";
 
 export const Testimonials = ({
   name,
   testimonial,
   country,
-  picture_link,
+  image,
   origin_city,
   program,
 }: TestimonialsProps) => {
+  const imageProps = useSanityImage(image);
+
   return (
     <div className="flex md:h-[70vh] w-full pr-8 flex-col md:flex-row">
       <div className="md:w-8/12 md:h-full h-48 hidden md:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="object-cover w-full h-full rounded-t-md md:rounded-t-none md:rounded-l-md md:rounded-tl-md"
-          src={picture_link}
           alt="image"
+          src={imageProps?.src}
+          width={imageProps?.width}
+          height={imageProps?.height}
         />
       </div>
       <div
@@ -63,7 +69,7 @@ export interface TestimonialsProps {
   name: string;
   testimonial: string;
   country: string;
-  picture_link: string;
+  image: any;
   origin_city: string;
   program: "GV" | "GTa" | "GTe" | "MXP";
 }
