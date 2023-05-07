@@ -42,19 +42,19 @@ const WiA = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-gray rounded-lg p-8">
+            <div className="bg-grey rounded-lg p-8">
               <h4 className="text-2xl font-bold">109+</h4>
               <span className="text-primary font-semibold text-sm">Countries &amp; Territories</span>
             </div>
-            <div className="bg-gray rounded-lg p-8">
+            <div className="bg-grey rounded-lg p-8">
               <h4 className="text-2xl font-bold">5000+</h4>
               <span className="text-primary font-semibold text-sm">Partner Organizations</span>
             </div>
-            <div className="bg-gray rounded-lg p-8">
+            <div className="bg-grey rounded-lg p-8">
               <h4 className="text-2xl font-bold">30.000+</h4>
               <span className="text-primary font-semibold text-sm">Experiences Every Year</span>
             </div>
-            <div className="bg-gray rounded-lg p-8">
+            <div className="bg-grey rounded-lg p-8">
               <h4 className="text-2xl font-bold">75</h4>
               <span className="text-primary font-semibold text-sm">Years of impact</span>
             </div>
