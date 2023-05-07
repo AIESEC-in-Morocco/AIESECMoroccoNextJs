@@ -15,10 +15,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
-import { client } from "@/integrations/sanity";
+import { useQuery } from "@tanstack/react-query";
 import getTestimoniels from "@/queries/getTestimoniels";
 
-export default function Home({ testimonials }: IndexProps) {
+export default function Home() {
+  const { data, isSuccess } = useQuery(
+    ["testimonials"],
+    () => getTestimoniels,
+    {
+      cacheTime: 20 * 60 * 1000,
+    }
+  );
+
   const navigate = useRouter();
 
   const testimonials_settings = {
@@ -146,19 +154,20 @@ export default function Home({ testimonials }: IndexProps) {
             <span className="text-primary">Stories</span> we help to create
           </h1>
           <Slider className="mt-8" {...testimonials_settings}>
-            {testimonials.map((testimonial) => {
-              return (
-                <Testimonials
-                  key={testimonial.ep_name}
-                  name={testimonial.ep_name}
-                  testimonial={testimonial.testimonial}
-                  image={testimonial.image}
-                  country={testimonial.country_visited}
-                  origin_city={testimonial.entity.city}
-                  program={testimonial.program.name}
-                />
-              );
-            })}
+            {isSuccess &&
+              data?.data.result.map((testimonial) => {
+                return (
+                  <Testimonials
+                    key={testimonial.ep_name}
+                    name={testimonial.ep_name}
+                    testimonial={testimonial.testimonial}
+                    image={testimonial.image}
+                    country={testimonial.country_visited}
+                    origin_city={testimonial.entity.city}
+                    program={testimonial.program.name}
+                  />
+                );
+              })}
           </Slider>
         </div>
 
@@ -174,36 +183,4 @@ export default function Home({ testimonials }: IndexProps) {
       <Footer />
     </>
   );
-}
-
-export async function getStaticProps() {
-  const testimonials = await client.fetch(getTestimoniels);
-
-  return {
-    props: {
-      testimonials,
-    },
-  };
-}
-
-interface Testimonial {
-  ep_name: string;
-  testimonial: string;
-  country_visited: string;
-  program: {
-    name: "GV" | "GTa" | "GTe" | "MXP";
-  };
-  entity: {
-    city: string;
-  };
-  image: {
-    assets: {
-      _ref: string;
-      _type: string;
-    };
-  };
-}
-
-interface IndexProps {
-  testimonials: Testimonial[];
 }
