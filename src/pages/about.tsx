@@ -2,12 +2,13 @@ import { NavBar, Container } from "@/components";
 import type { NextPage } from "next";
 import Head from "next/head";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
-import { Slider } from "@/components/AwsSlider";
+// import { Slider } from "@/components/AwsSlider";
 import { HistoryCards } from "@/components/HistoryCard";
 import Team from "@/components/Team";
 import { Footer } from "@/components/Footer";
 import WiS from "@/components/AboutHeader";
 import { Values } from "@/components/Values";
+import Slider from "@/components/KeenSlider";
 
 const AboutUs: NextPage = () => {
   return (
@@ -19,7 +20,7 @@ const AboutUs: NextPage = () => {
       <Container>
         <WiS />
         <Values />
-        <Slider />
+        
         <div className="">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our History
@@ -33,6 +34,12 @@ const AboutUs: NextPage = () => {
         </div>
         <div className="bg-white relative">
           <Team />
+        </div>
+        <div className="mt-5">
+          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
+            Our Local Branches
+          </h1>
+          <Slider />
         </div>
         <div className="bg-white relative pb-24">
           <img
