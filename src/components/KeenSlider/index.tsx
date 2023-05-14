@@ -131,8 +131,8 @@ const Slider = () => {
       <div className="my-10">
         <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider h-[28rem] ">
-            {images.map((image) => (
-              <div className="keen-slider__slide">
+            {images.map((image, index) => (
+              <div key={index} className="keen-slider__slide">
                 <img
                   src={image.src}
                   alt={image.movement}
