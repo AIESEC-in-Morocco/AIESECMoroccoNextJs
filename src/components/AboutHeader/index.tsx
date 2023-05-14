@@ -7,12 +7,27 @@ const WiA = () => {
     <Grid
       templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
-      className="flex flex-col md:flex-row mb-3 p-10"
+      className="flex flex-col md:flex-row my-5"
     >
-      
       <GridItem
-        
         colSpan={{ sm: 2, md: 1}}
+        className="order-2 md:order-2"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="md"
+      >
+        {/* Content for 1/3 column on top for small screens, and on the left for larger screens */}
+        <img
+          src={getImageFromGoogleDrive(
+            "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
+          )}
+          alt="My Image"
+          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto", maxHeight: "100%" }}
+        />
+      </GridItem>
+      <GridItem
+        colSpan={{ sm: 2, md: 2}}
         className="order-1 md:order-1"
         display="flex"
       >
@@ -61,23 +76,6 @@ const WiA = () => {
             </a>
           </div>
         </div>
-      </GridItem>
-      <GridItem
-        colSpan={{ sm: 2, md: 2}}
-        className="order-2 md:order-2"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        borderRadius="md"
-      >
-        {/* Content for 1/3 column on top for small screens, and on the left for larger screens */}
-        <img
-          src={getImageFromGoogleDrive(
-            "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
-          )}
-          alt="My Image"
-          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto", maxHeight: "100%" }}
-        />
       </GridItem>
     </Grid>
   );
