@@ -10,7 +10,7 @@ const WiA = () => {
       className="flex flex-col md:flex-row my-5"
     >
       <GridItem
-        colSpan={{ sm: 2, md: 1}}
+        colSpan={{ sm: 2, md: 2}}
         className="order-1 md:order-2"
         display="flex"
         justifyContent="center"
@@ -27,7 +27,7 @@ const WiA = () => {
         />
       </GridItem>
       <GridItem
-        colSpan={{ sm: 2, md: 2}}
+        colSpan={{ sm: 2, md: 1}}
         className="order-2 md:order-1"
         display="flex"
       >
