@@ -28,7 +28,7 @@ const WiA = () => {
       </GridItem>
       <GridItem
         colSpan={{ sm: 2, md: 2}}
-        className="order-2 md:order-1 mb-8"
+        className="order-2 md:order-1"
         display="flex"
       >
         {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
@@ -58,7 +58,7 @@ const WiA = () => {
               <span className="text-primary font-semibold text-sm">Years of impact</span>
             </div>
           </div>
-          <p className="mb-5">
+          <p className="mb-8">
             AIESEC is a global platform for young people to develop their
             leadership potential through practical experiences of many kinds,
             including internships, volunteering opportunities, and more. Founded
