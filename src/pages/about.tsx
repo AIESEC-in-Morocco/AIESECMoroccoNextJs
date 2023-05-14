@@ -23,39 +23,34 @@ const faqs = [
       "AIESEC aims to develop leadership in every young person around the world, because to make a change in this world, you need to be a decision maker, you can become that way, if you have a developed leader inside you, which can only happen through putting yourself into challenging environment and to be open to the world and this is exactly what we do in AIESEC we provide exchange and membership programs that enable people to discover and boost their potential.",
   },
   {
-    question: "Do I need to become a member of AIESEC to apply for an exchange?",
+    question:
+      "Do I need to become a member of AIESEC to apply for an exchange?",
     answer:
       "No, you do not have to become a member of AIESEC to go on exchange.",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
   {
     question: "testtesttest",
-    answer:
-      "testtesttesttest",
+    answer: "testtesttesttest",
   },
 ];
 
@@ -66,8 +61,8 @@ const AboutUs: NextPage = () => {
         <title>AboutUs</title>
       </Head>
       <NavBar />
+      <WiS />
       <Container>
-        <WiS />
         <Values />
 
         <div className="">
