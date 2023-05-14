@@ -32,7 +32,7 @@ const WiA = () => {
         display="flex"
       >
         {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
-        <div className="lg:pr-24 lg:pl-24">
+        <div className="lg:pr-24">
           <div className="text-center lg:text-left">
             <h2 className="text-4xl font-bold mb-4">What is AIESEC?</h2>
             <p className="mb-8">
