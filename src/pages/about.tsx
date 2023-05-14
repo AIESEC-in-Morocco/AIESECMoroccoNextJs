@@ -9,6 +9,55 @@ import { Footer } from "@/components/Footer";
 import WiS from "@/components/AboutHeader";
 import { Values } from "@/components/Values";
 import Slider from "@/components/KeenSlider";
+import FAQ from "@/components/FAQs";
+
+const faqs = [
+  {
+    question: "What's AIESEC ?",
+    answer:
+      "AIESEC is an entirely youth-led not-for-profit organisation present in over 100 countries and territories, and active since 1948. We provide young people with the opportunity to grow and learn in an exciting new environment, undertaking enriching cross-cultural experiences while having a positive impact on world and developing relevant skills for their future careers.",
+  },
+  {
+    question: "What is AIESEC’s goal?",
+    answer:
+      "AIESEC aims to develop leadership in every young person around the world, because to make a change in this world, you need to be a decision maker, you can become that way, if you have a developed leader inside you, which can only happen through putting yourself into challenging environment and to be open to the world and this is exactly what we do in AIESEC we provide exchange and membership programs that enable people to discover and boost their potential.",
+  },
+  {
+    question: "Do I need to become a member of AIESEC to apply for an exchange?",
+    answer:
+      "No, you do not have to become a member of AIESEC to go on exchange.",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+  {
+    question: "testtesttest",
+    answer:
+      "testtesttesttest",
+  },
+];
 
 const AboutUs: NextPage = () => {
   return (
@@ -20,7 +69,7 @@ const AboutUs: NextPage = () => {
       <Container>
         <WiS />
         <Values />
-        
+
         <div className="">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our History
@@ -32,28 +81,29 @@ const AboutUs: NextPage = () => {
             <HistoryCards program="MOR_2016" />
           </div>
         </div>
-        <div className="bg-white relative">
-          <Team />
-        </div>
+        <Team />
         <div className="mt-5">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our Local Branches
           </h1>
           <Slider />
         </div>
-        <div className="bg-white relative pb-24">
-          <img
-            src={getImageFromGoogleDrive(
-              "https://drive.google.com/file/d/1Hy_nfvtH9bbFqcYramGYrQOz9hNbSjhI/view?usp=share_link"
-            )}
-            alt="Hero Background"
-            width={1920}
-            height={1080}
-            className="object-cover object-center w-full h-full"
-          />
+        <div className="max-w-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Frequently asked questions
+          </h2>
+          <div className="mt-6 border-t border-gray-200 pt-6">
+            {faqs.map((faq) => (
+              <FAQ
+                key={faq.question}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </div>
         </div>
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 };

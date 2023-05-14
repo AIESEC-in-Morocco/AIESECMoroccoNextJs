@@ -31,7 +31,8 @@ const people = [
       "https://drive.google.com/file/d/16bZhslsp2hJ1D8vDI4N6raG1CRz8NYt8/view?usp=share_link"
     ),
     facebookUrl: "https://web.facebook.com/mohammedkhalilbadaoui",
-    linkedInUrl: "https://www.linkedin.com/in/mohammed-khalil-badaoui-2222031b8/",
+    linkedInUrl:
+      "https://www.linkedin.com/in/mohammed-khalil-badaoui-2222031b8/",
     instagramUrl: "#",
   },
   {
@@ -105,9 +106,10 @@ export default function Team() {
             Meet our Team
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            laboriosam, magni tempore at maxime labore quo. Minima quisquam unde
-            dolorum rerum blanditiis esse asperiores tempora!
+            Our mission is to help developping more moroccan youth for a better
+            future of our country and for the world. We do that by spreading our
+            impact nationally and helping many youth. Daring to reach the
+            optimum state.
           </p>
         </div>
         <ul
