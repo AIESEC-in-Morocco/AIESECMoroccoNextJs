@@ -11,7 +11,7 @@ const WiA = () => {
     >
       <GridItem
         colSpan={{ sm: 2, md: 1}}
-        className="order-2 md:order-2"
+        className="order-1 md:order-2"
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -28,7 +28,7 @@ const WiA = () => {
       </GridItem>
       <GridItem
         colSpan={{ sm: 2, md: 2}}
-        className="order-1 md:order-1"
+        className="order-2 md:order-1 mb-8"
         display="flex"
       >
         {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
