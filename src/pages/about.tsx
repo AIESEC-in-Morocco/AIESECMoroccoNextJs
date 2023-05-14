@@ -61,8 +61,8 @@ const AboutUs: NextPage = () => {
         <title>AboutUs</title>
       </Head>
       <NavBar />
-      <WiS />
       <Container>
+      <WiS />
         <Values />
 
         <div className="">
