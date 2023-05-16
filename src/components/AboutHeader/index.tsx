@@ -5,7 +5,7 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 const WiA = () => {
   return (
     <Grid
-      templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(2, 1fr)"}}
+      templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
       className="flex flex-col md:flex-row my-5"
     >
@@ -27,7 +27,7 @@ const WiA = () => {
         />
       </GridItem>
       <GridItem
-        colSpan={{ sm: 2, md: 2}}
+        colSpan={{ sm: 2, md: 1}}
         className="order-2 md:order-1"
         display="flex"
       >
