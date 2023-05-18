@@ -24,7 +24,7 @@ const WiA = () => {
             "https://drive.google.com/file/d/1GOHeJVomNfViOJgB_3MtH0C9YFObU8kZ/view?usp=share_link"
           )}
           alt="My Image"
-          style={{ borderRadius: "5%", maxWidth: "100%", display: "block", margin: "auto", maxHeight: "100%" }}
+          style={{ borderRadius: "5%", maxWidth: "75%", display: "block", margin: "auto", maxHeight: "100%" }}
         />
       </GridItem>
       <GridItem
@@ -33,7 +33,7 @@ const WiA = () => {
         display="flex"
       >
         {/* Content for 2/3 column on bottom for small screens, and on the right for larger screens */}
-        <div className="lg:pr-24">
+        <div className="">
           <div className="text-center lg:text-left">
             <h2 className="text-4xl font-bold mb-4">What is AIESEC?</h2>
             <p className="mb-8">
