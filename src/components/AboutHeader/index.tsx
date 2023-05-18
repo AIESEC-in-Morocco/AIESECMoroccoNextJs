@@ -8,6 +8,7 @@ const WiA = () => {
       templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
       className="flex flex-col md:flex-row my-5"
+      autoRows={"1fr"}
     >
       <GridItem
         colSpan={{ sm: 2, md: 2}}

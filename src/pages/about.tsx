@@ -63,7 +63,6 @@ const AboutUs: NextPage = () => {
       <NavBar />
       <Container>
         <WiS />
-        hey
         <Values />
 
         <div className="">
