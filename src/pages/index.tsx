@@ -17,8 +17,20 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
 import { useQuery } from "@tanstack/react-query";
 import getTestimoniels from "@/queries/getTestimoniels";
+import header from "@/assets/headers/1.jpg";
+// import { useEffect, useState } from "react";
 
 export default function Home() {
+  // const [hide, setHide] = useState(true);
+
+  // useEffect(() => {
+  //   const hideNavbar = () => {
+  //     window.scrollY > 59 ? setHide(false) : setHide(true);
+  //   };
+
+  //   window.addEventListener("scroll", hideNavbar);
+  // }, []);
+
   const { data, isSuccess } = useQuery(
     ["testimonials"],
     () => getTestimoniels,
@@ -52,16 +64,30 @@ export default function Home() {
         />
       </Head>
       <NavBar />
+      {/* {hide && <NavBar />} */}
+      {/* <div className="h-[calc(100vh - 64px)] relative">
+        <img
+          src={header.src}
+          className="w-full h-full object-cover"
+          alt="cover"
+        />
+        <div className="absolute top-[calc(50%-96px/2)] left-[calc(50%-514.55px/2)] text-white text-center">
+          <h1 className="text-3xl">Official Website Of: </h1>
+          <h1 className="text-6xl font-semibold">AIESEC in Morocco</h1>
+        </div>
+      </div> */}
       <Container>
         <div className="flex h-auto md:h-[90vh] items-center justify-center flex-col-reverse md:flex-row text-gray-700 font-sans">
           <div className=" w-full grow-[2] mt-4 md:mt-0 md:pr-8">
             <h1 className="md:text-5xl text-3xl font-semibold">
-              <span className="text-primary">Leadership</span> is for every
-              young person
+              Start your <span className="text-primary">leadership</span>{" "}
+              journey
+              {/* <span className="text-primary">Leadership</span> is for every
+              young person */}
             </h1>
             <p className="text-lg mt-2 md:mt-4 font-medium md:pr-12">
-              Take part in one of our programs abroad, in your city, or
-              virtually. Start your leadership journey with AIESEC.
+              Take part in one of our programs.Start your leadership journey
+              with AIESEC.
             </p>
             <button
               className="transition duration-500 font-semibold px-5 py-3 md:w-1/5 w-full mt-4 text-white bg-primary hover:bg-blue-500 rounded-lg text-center"
@@ -72,6 +98,7 @@ export default function Home() {
           </div>
           <div className="bg-zinc-500  w-full grow-0 mt-4 md:mt-0">
             <Image
+              className="rounded-sm"
               width={870}
               height={500}
               alt="People"
@@ -81,28 +108,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="pt-12 lg:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
-          <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold text-center">
-            Our Partners
-          </h1>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 my-20">
-            {PARTNERS.map((partner) => {
-              return (
-                <div
-                  key={partner.name}
-                  className="flex justify-center items-center"
-                >
-                  <img
-                    src={getImageFromGoogleDrive(partner.logo_link)}
-                    alt={partner.name}
-                    className="object-contain grayscale hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
         <div className=" flex flex-col md:flex-row mt-6  items-center justify-center md:h-[60vh]">
           <div className="bg-slate-700 w-full">
             <Image
@@ -116,15 +122,11 @@ export default function Home() {
           </div>
           <div className="w-full md:pl-8 mt-4 md:mt-0">
             <h1 className="md:text-4xl text-3xl font-semibold text-gray-700">
-              About AIESEC
+              A little about us
             </h1>
             <p className="text-lg mt-2 md:mt-4 font-medium text-gray-700">
-              AIESEC is a global non-profit youth organization that develops
-              leadership capabilities in young people through cross-cultural
-              exchanges and volunteering. With a network of over 40,000 members,
-              AIESEC operates in over 120 countries and aims to create a
-              positive impact on society by empowering young people to become
-              socially responsible and globally aware leaders.
+              AIESEC is a community of young people, passionately driven by one
+              cause: peace and fulfilment of humankind&apos;s potential.
             </p>
             <button
               className="transition duration-500 font-semibold text-base px-5 py-3 md:w-1/3 w-1/2 mt-4 text-white bg-primary hover:bg-blue-500 rounded-lg  text-center"
@@ -179,6 +181,28 @@ export default function Home() {
           width={500}
           height={200}
         /> */}
+        <div className="pt-12 lg:py-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+          <h1 className="text-gray-700 md:text-5xl text-3xl font-semibold text-center">
+            Our Partners
+          </h1>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 my-20">
+            {PARTNERS.map((partner) => {
+              return (
+                <div
+                  key={partner.name}
+                  className="flex justify-center items-center"
+                >
+                  <img
+                    src={getImageFromGoogleDrive(partner.logo_link)}
+                    alt={partner.name}
+                    className="object-contain grayscale hover:grayscale-0 transition duration-300"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </Container>
       <Footer />
     </>
