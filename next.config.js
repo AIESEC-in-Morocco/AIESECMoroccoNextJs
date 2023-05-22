@@ -35,6 +35,11 @@ nextConfig = {
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ },
         use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
       }
     );
 
