@@ -10,7 +10,9 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 
 const events = [
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1hbQDefjDKoxlpJc-t11VR12I_13CMwso/view?usp=drive_link"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1hbQDefjDKoxlpJc-t11VR12I_13CMwso/view?usp=drive_link"
+    ),
     customer: "*AIESECers only",
     title: "MOROC'CO",
     duration: "4 Days",
@@ -19,7 +21,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1PbpFoVjeHcXevdNcnnEmTHFZMw53txJH/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1PbpFoVjeHcXevdNcnnEmTHFZMw53txJH/view?usp=sharing"
+    ),
     customer: "*AIESECers only",
     title: "KICK'OFF",
     duration: "4 Days",
@@ -28,7 +32,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1FVhUkutTu15XXYzeAM25taqJcl1348zV/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1FVhUkutTu15XXYzeAM25taqJcl1348zV/view?usp=sharing"
+    ),
     customer: "*AIESECers only",
     title: "SUMMER'CO",
     duration: "4 Days",
@@ -37,7 +43,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1mGiS6M1i3Q7MS5KwxS8-bPZkKPcS0T1j/view?usp=drive_link"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1mGiS6M1i3Q7MS5KwxS8-bPZkKPcS0T1j/view?usp=drive_link"
+    ),
     customer: "*AIESECers only",
     title: "NLC",
     duration: "3 Days",
@@ -46,7 +54,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1NRJLjynF2fmZp7uIGwu_5VhIfhZwSxwi/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1NRJLjynF2fmZp7uIGwu_5VhIfhZwSxwi/view?usp=sharing"
+    ),
     customer: "*AIESECers only",
     title: "POWER UP",
     duration: "3 Days",
@@ -55,7 +65,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1rR8DXnAv_H3eOW26JtG6k0hM86qmK66s/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1rR8DXnAv_H3eOW26JtG6k0hM86qmK66s/view?usp=sharing"
+    ),
     customer: "*FOR ALL YOUTH",
     title: "MGW",
     duration: "1 Week",
@@ -64,7 +76,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1zXed0PgHPWE57gxTmO4HzmOvi_qUdi8S/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1zXed0PgHPWE57gxTmO4HzmOvi_qUdi8S/view?usp=sharing"
+    ),
     customer: "*FOR ALL YOUTH",
     title: "WLL",
     duration: "1 Day",
@@ -73,7 +87,9 @@ const events = [
     link: "/event-details",
   },
   {
-    image: getImageFromGoogleDrive("https://drive.google.com/file/d/1h3crkM5alIJou7O0DSN4lGTtPNAWfShx/view?usp=sharing"),
+    image: getImageFromGoogleDrive(
+      "https://drive.google.com/file/d/1h3crkM5alIJou7O0DSN4lGTtPNAWfShx/view?usp=sharing"
+    ),
     customer: "*FOR ALL YOUTH",
     title: "Yalla Innovate",
     duration: "2 Days",
@@ -106,9 +122,13 @@ const AmazingDeals: NextPage = () => {
           </div>
           <div className="flex flex-wrap -mx-3 my-10">
             {events.map((event, index) => (
-              <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 px-3 mb-3">
+              <div
+                className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 px-3 mb-3"
+                key={index}
+              >
                 <div className="bg-white shadow-2xl rounded-lg flex flex-col h-full">
                   <div className="p-4 flex-grow" key={index}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={event.image}
                       alt={event.title}
