@@ -1,67 +1,61 @@
 import "keen-slider/keen-slider.min.css";
 import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
-import Image from "next/image";
+// import Image from "next/image";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import React, { useState } from "react";
+import getEntities from "@/queries/getEntities";
+import { useQuery } from "@tanstack/react-query";
 
-const images = [
-  {
-    movement: "the TANGERIENCE",
-    vision: "DYNAMIZE: Dynamic Growth, Limitless Potential",
-    city: "Tangier",
-    src: "https://drive.google.com/uc?id=13b4N2sv6kFAXP78mVE5ZcRK2_V6LfF4N",
-  },
-  {
-    movement: "Casawe Spirit",
-    vision: "Fire Meeting Gasoline",
-    city: "Casablanca",
-    src: "https://drive.google.com/uc?id=1UoZv7vI1n1AI7wE5SECSm2XS1DC8Jw-I",
-  },
-  {
-    movement: "Wolves of Mohammedia",
-    vision: "Revival Wolves",
-    city: "Mohammedia",
-    src: "https://drive.google.com/uc?id=10WL4NprLWyO-1CkJvQ_Hhz25hH7Tvk09",
-  },
-  {
-    movement: "Hellala",
-    vision: "Driving the way forward to reach the Zenith",
-    city: "Kenitra",
-    src: "https://drive.google.com/uc?id=1-AFt6Y-xPyXj3zUmaGG4PkZM_r59yDrP",
-  },
-  {
-    movement: "BigBang",
-    vision: "Rewind the BigBang",
-    city: "Beni Mellal",
-    src: "https://drive.google.com/uc?id=1Ix39aUQ41uL9V5YUy6oRxOcvzBLvI0uT",
-  },
-  {
-    movement: "Lions",
-    vision: "Blazing the path to success",
-    city: "Ifrane",
-    src: "https://drive.google.com/uc?id=1mXt1yKQmYRnZhzcxZaPrd9nOyFlbO-T9",
-  },
-  {
-    movement: "The Fezberg Movement",
-    vision: "Magnifying the Luster",
-    city: "Fez",
-    src: "https://drive.google.com/uc?id=1Upr5vWj1vR79wRprNHZNFvllbtprUaRG",
-  },
-];
+// const images = [
+//   {
+//     movement: "the TANGERIENCE",
+//     vision: "DYNAMIZE: Dynamic Growth, Limitless Potential",
+//     city: "Tangier",
+//     src: "https://drive.google.com/uc?id=13b4N2sv6kFAXP78mVE5ZcRK2_V6LfF4N",
+//   },
+//   {
+//     movement: "Casawe Spirit",
+//     vision: "Fire Meeting Gasoline",
+//     city: "Casablanca",
+//     src: "https://drive.google.com/uc?id=1UoZv7vI1n1AI7wE5SECSm2XS1DC8Jw-I",
+//   },
+//   {
+//     movement: "Wolves of Mohammedia",
+//     vision: "Revival Wolves",
+//     city: "Mohammedia",
+//     src: "https://drive.google.com/uc?id=10WL4NprLWyO-1CkJvQ_Hhz25hH7Tvk09",
+//   },
+//   {
+//     movement: "Hellala",
+//     vision: "Driving the way forward to reach the Zenith",
+//     city: "Kenitra",
+//     src: "https://drive.google.com/uc?id=1-AFt6Y-xPyXj3zUmaGG4PkZM_r59yDrP",
+//   },
+//   {
+//     movement: "BigBang",
+//     vision: "Rewind the BigBang",
+//     city: "Beni Mellal",
+//     src: "https://drive.google.com/uc?id=1Ix39aUQ41uL9V5YUy6oRxOcvzBLvI0uT",
+//   },
+//   {
+//     movement: "Lions",
+//     vision: "Blazing the path to success",
+//     city: "Ifrane",
+//     src: "https://drive.google.com/uc?id=1mXt1yKQmYRnZhzcxZaPrd9nOyFlbO-T9",
+//   },
+//   {
+//     movement: "The Fezberg Movement",
+//     vision: "Magnifying the Luster",
+//     city: "Fez",
+//     src: "https://drive.google.com/uc?id=1Upr5vWj1vR79wRprNHZNFvllbtprUaRG",
+//   },
+// ];
 
 const Slider = () => {
-  //   const [sliderRef, instanceRef] = useKeenSlider(
-  //     {
-  //       slideChanged() {
-  //         console.log("slide changed");
-  //       },
-  //     },
-  //     [
-  //       // add plugins here
-  //     ]
-  // );
-
+  const { data, isSuccess } = useQuery(["testimonials"], () => getEntities, {
+    cacheTime: 20 * 60 * 1000,
+  });
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
@@ -131,25 +125,30 @@ const Slider = () => {
       <div className="my-10">
         <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider h-[28rem] ">
-            {images.map((image, index) => (
-              <div key={index} className="keen-slider__slide">
-                <img
-                  src={image.src}
-                  alt={image.movement}
-                  width={1920}
-                  className="mx-auto object-center object-contain mt-[-20%]"
-                ></img>
-                <div className="text-center font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-75 text-white p-2 rounded-xl">
-                  <p className="text-3xl">{image.movement}</p>
-                  <p className="">{image.vision}</p>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black bg-opacity-75 text-white font-extrabold text-center text-2xl p-2">
-                  {image.city}
-                </div>
-              </div>
-            ))}
+            {isSuccess &&
+              data?.data.result.map((image, index) => {
+                console.log(image);
+                return (
+                  <div key={index} className="keen-slider__slide">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={getImageFromGoogleDrive(image.image_link)}
+                      alt={image.movement_name}
+                      width={1920}
+                      className="mx-auto object-center object-contain mt-[-20%]"
+                    ></img>
+                    <div className="text-center font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-75 text-white p-2 rounded-xl">
+                      <p className="text-3xl">{image.movement_name}</p>
+                      <p className="">{image.vision}</p>
+                    </div>
+                    <div className="absolute bottom-0 w-full bg-black bg-opacity-75 text-white font-extrabold text-center text-2xl p-2">
+                      {image.city}
+                    </div>
+                  </div>
+                );
+              })}
           </div>
-          {loaded && instanceRef.current && (
+          {isSuccess && loaded && instanceRef.current && (
             <>
               <Arrow
                 left
@@ -163,19 +162,14 @@ const Slider = () => {
                 onClick={(e: any) =>
                   e.stopPropagation() || instanceRef.current?.next()
                 }
-                disabled={
-                  currentSlide ===
-                  instanceRef.current.track.details.slides.length - 1
-                }
+                disabled={currentSlide === data.data.result.length - 1}
               />
             </>
           )}
         </div>
-        {loaded && instanceRef.current && (
+        {isSuccess && loaded && instanceRef.current && (
           <div className="dots">
-            {[
-              ...Array(instanceRef.current.track.details.slides.length).keys(),
-            ].map((idx) => {
+            {[...Array(data.data.result.length).keys()].map((idx) => {
               return (
                 <button
                   key={idx}
@@ -183,7 +177,7 @@ const Slider = () => {
                     instanceRef.current?.moveToIdx(idx);
                   }}
                   className={"dot" + (currentSlide === idx ? " active" : "")}
-                ></button>
+                />
               );
             })}
           </div>
