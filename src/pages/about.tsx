@@ -63,9 +63,10 @@ const AboutUs: NextPage = () => {
       <NavBar />
       <Container>
         <WiS />
-        <Values />        
-
-        <div className="">
+        <div className="mt-16">
+          <Values />
+        </div>
+        <div className="mt-10">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our History
           </h1>
@@ -77,7 +78,7 @@ const AboutUs: NextPage = () => {
           </div>
         </div>
         <Team />
-        <div className="mt-5">
+        <div className="">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our Local Branches
           </h1>

@@ -99,6 +99,8 @@ const events = [
   },
 ];
 
+const placeholderImage = "https://placehold.co/600x400/fff/fff";
+
 const AmazingDeals: NextPage = () => {
   return (
     <>
@@ -129,11 +131,16 @@ const AmazingDeals: NextPage = () => {
                 <div className="bg-white shadow-2xl rounded-lg flex flex-col h-full">
                   <div className="p-4 flex-grow" key={index}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="w-full h-auto rounded-lg shadow-md mb-4"
-                    />
+                    <div
+                      className="w-full h-auto rounded-lg shadow-md mb-4 bg-center bg-cover"
+                      style={{ backgroundImage: `url(${placeholderImage})` }}
+                    >
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-auto rounded-lg shadow-md mb-4"
+                      />
+                    </div>
                     <span className="block bg-primary text-white rounded-full text-sm px-2 py-1 font-semibold">
                       {event.customer}
                     </span>
