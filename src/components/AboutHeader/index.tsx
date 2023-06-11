@@ -4,6 +4,7 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 
 const WiA = () => {
   return (
+    
     <Grid
       templateColumns={{ sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)"}}
       gap={4}
