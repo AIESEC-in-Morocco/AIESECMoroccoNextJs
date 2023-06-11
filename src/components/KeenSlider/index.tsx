@@ -125,28 +125,26 @@ const Slider = () => {
       <div className="my-10">
         <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider h-[28rem] ">
-            {isSuccess &&
-              data?.data.result.map((image, index) => {
-                console.log(image);
-                return (
-                  <div key={index} className="keen-slider__slide">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={getImageFromGoogleDrive(image.image_link)}
-                      alt={image.movement_name}
-                      width={1920}
-                      className="mx-auto object-center object-contain mt-[-20%]"
-                    ></img>
-                    <div className="text-center font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-75 text-white p-2 rounded-xl">
-                      <p className="text-3xl">{image.movement_name}</p>
-                      <p className="">{image.vision}</p>
-                    </div>
-                    <div className="absolute bottom-0 w-full bg-black bg-opacity-75 text-white font-extrabold text-center text-2xl p-2">
-                      {image.city}
-                    </div>
+            {data?.data.result.map((image, index) => {
+              return (
+                <div key={index} className="keen-slider__slide">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={getImageFromGoogleDrive(image.image_link)}
+                    alt={image.movement_name}
+                    width={1920}
+                    className="mx-auto object-center object-contain mt-[-20%]"
+                  ></img>
+                  <div className="text-center font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-75 text-white p-2 rounded-xl">
+                    <p className="text-3xl">{image.movement_name}</p>
+                    <p className="">{image.vision}</p>
                   </div>
-                );
-              })}
+                  <div className="absolute bottom-0 w-full bg-black bg-opacity-75 text-white font-extrabold text-center text-2xl p-2">
+                    {image.city}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           {isSuccess && loaded && instanceRef.current && (
             <>
