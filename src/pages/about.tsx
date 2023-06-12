@@ -1,8 +1,6 @@
 import { NavBar, Container } from "@/components";
 import type { NextPage } from "next";
 import Head from "next/head";
-import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
-// import { Slider } from "@/components/AwsSlider";
 import { HistoryCards } from "@/components/HistoryCard";
 import Team from "@/components/Team";
 import { Footer } from "@/components/Footer";
@@ -78,7 +76,7 @@ const AboutUs: NextPage = () => {
           </div>
         </div>
         <Team />
-        <div className="">
+        <div className="w-full">
           <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-black mb-4 text-center">
             Our Local Branches
           </h1>

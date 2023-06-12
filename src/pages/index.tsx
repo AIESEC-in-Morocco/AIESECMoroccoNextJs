@@ -17,7 +17,6 @@ import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
 import PARTNERS from "@/utils/partners";
 import { useQuery } from "@tanstack/react-query";
 import getTestimoniels from "@/queries/getTestimoniels";
-import header from "@/assets/headers/1.jpg";
 // import { useEffect, useState } from "react";
 
 export default function Home() {

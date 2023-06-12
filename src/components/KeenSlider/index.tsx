@@ -1,11 +1,11 @@
-import "keen-slider/keen-slider.min.css";
-import KeenSlider from "keen-slider";
-import { useKeenSlider } from "keen-slider/react";
+import Slider from "react-slick";
 // import Image from "next/image";
 import getImageFromGoogleDrive from "@/utils/getImageFromGoogleDrive";
-import React, { useState } from "react";
 import getEntities from "@/queries/getEntities";
 import { useQuery } from "@tanstack/react-query";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // const images = [
 //   {
@@ -52,162 +52,50 @@ import { useQuery } from "@tanstack/react-query";
 //   },
 // ];
 
-const Slider = () => {
-  const { data, isSuccess } = useQuery(["testimonials"], () => getEntities, {
+const EntitiesSlider = () => {
+  const { data, isSuccess } = useQuery(["getEntities"], () => getEntities, {
     cacheTime: 20 * 60 * 1000,
   });
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "free-snap",
-    slides: {
-      origin: "center",
-      perView: 1,
-      spacing: 15,
-    },
-    breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
-      },
-      "(min-width: 1000px)": {
-        slides: { perView: 3, spacing: 10 },
-      },
-    },
-  });
 
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      initial: 0,
-      loop: true,
-      mode: "free-snap",
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel);
-      },
-      created() {
-        setLoaded(true);
-      },
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 10000);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
+  const testimonials_settings = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    // centerMode: true,
+    // centerPadding: "20% 0 0",
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // adaptiveHeight: true,
+  };
 
   return (
-    <>
-      <div className="my-10">
-        <div className="navigation-wrapper">
-          <div ref={sliderRef} className="keen-slider h-[28rem] ">
-            {data?.data.result.map((image, index) => {
-              return (
-                <div key={index} className="keen-slider__slide">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={getImageFromGoogleDrive(image.image_link)}
-                    alt={image.movement_name}
-                    width={1920}
-                    className="mx-auto object-center object-contain mt-[-20%]"
-                  ></img>
-                  <div className="text-center font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-75 text-white p-2 rounded-xl">
-                    <p className="text-3xl">{image.movement_name}</p>
-                    <p className="">{image.vision}</p>
-                  </div>
-                  <div className="absolute bottom-0 w-full bg-black bg-opacity-75 text-white font-extrabold text-center text-2xl p-2">
-                    {image.city}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          {isSuccess && loaded && instanceRef.current && (
-            <>
-              <Arrow
-                left
-                onClick={(e: any) =>
-                  e.stopPropagation() || instanceRef.current?.prev()
-                }
-                disabled={currentSlide === 0}
-              />
-
-              <Arrow
-                onClick={(e: any) =>
-                  e.stopPropagation() || instanceRef.current?.next()
-                }
-                disabled={currentSlide === data.data.result.length - 1}
-              />
-            </>
-          )}
-        </div>
-        {isSuccess && loaded && instanceRef.current && (
-          <div className="dots">
-            {[...Array(data.data.result.length).keys()].map((idx) => {
-              return (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    instanceRef.current?.moveToIdx(idx);
-                  }}
-                  className={"dot" + (currentSlide === idx ? " active" : "")}
+    <Slider className="mt-8 w-full" {...testimonials_settings}>
+      {isSuccess &&
+        data?.data.result.map((entity) => {
+          return (
+            <div className="flex md:h-[70vh] w-full pr-8 " key={entity.city}>
+              <div className="md:w-full md:h-full h-48 hidden md:block relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="object-cover grayscale w-full h-full rounded-t-md md:rounded-t-none md:rounded-l-md md:rounded-tl-md"
+                  alt="image"
+                  src={getImageFromGoogleDrive(entity.image_link)}
                 />
-              );
-            })}
-          </div>
-        )}
-      </div>
-    </>
+                <div className="w-full h-full top-0 bottom-0 left-0 right-0 absolute bg-black/30" />
+                <div className="absolute bottom-4 left-8">
+                  <h1 className="text-white text-2xl font-semibold">
+                    {entity.movement_name}{" "}
+                    <span className="font-thin">- {entity.city}</span>
+                  </h1>
+                  <h1 className="text-white text-lg">{entity.vision}</h1>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+    </Slider>
   );
 };
 
-function Arrow(props: {
-  disabled: boolean;
-  left?: boolean;
-  onClick: (e: any) => void;
-}) {
-  const disabeld = props.disabled ? " arrow--disabled" : "";
-  return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabeld}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
-  );
-}
-
-export default Slider;
+export default EntitiesSlider;
